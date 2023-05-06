@@ -20,8 +20,8 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
-  --color-theme: rgb(140, 84, 236);
-  --color-theme-2: rgba(140, 84, 236, .6)
+  --color-theme: rgb(214, 90, 49);
+  --color-theme-2: rgba(214, 90, 49, .8)
 }
 
 /* semantic color variables for this project */
