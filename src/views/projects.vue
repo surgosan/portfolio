@@ -164,7 +164,7 @@
         transition: 0s;
     }
     #image-track > .track-item {
-        width: 40vmin;
+        width: 46vmin;
         height: 56vmin;
         object-fit: cover;
         scale: 1;
@@ -184,8 +184,9 @@
       bottom: -40%;
       left: 0%;
       width: 100%;
-      height: 30%;
+      height: fit-content;
       padding: 3%;
+      padding-bottom: 5%;
       display: flex;
       flex-direction: column;
       justify-content: center;
