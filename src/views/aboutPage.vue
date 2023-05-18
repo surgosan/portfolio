@@ -14,12 +14,12 @@
         <div class="row-items">
             <h1 class="section-header">A little about me</h1>
         <div class="flex-spacer"></div>
-            <descriptionCard style="width: 35%; padding-right: 5%" msg="My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend Dalton State College.
+            <descriptionCard class="infoCardRight" msg="My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend Dalton State College.
                 I will attend Kennesaw State University this August. I enjoy programming, music, photography, and motorcycles."/>
         </div>
 
         <div class="row-items">
-            <descriptionCard style="width: 35%; padding-left: 10%" msg="I am a musician and perform on the weekends. I ride a motorcycle, so I like to take trips and 
+            <descriptionCard class="infoCard" msg="I am a musician and perform on the weekends. I ride a motorcycle, so I like to take trips and 
             off-roading. I also like photography and go out to take photos sometimes. I also really enjoy programming. I never get tired and sometimes just
             program for fun."/>
             <div class="flex-spacer"></div>
@@ -29,14 +29,14 @@
         <div class="row-items">
             <h1 class="section-header">Work Ethic</h1>
         <div class="flex-spacer"></div>
-            <descriptionCard style="width: 35%; padding-right: 10%" msg="I am well organized and like to work hard and smart. I enjoy problem solving and am independent, 
+            <descriptionCard class="infoCardRight" msg="I am well organized and like to work hard and smart. I enjoy problem solving and am independent, 
                 but I am always willing to work with others as well." />
         </div>
 
         <div class="row-items">
-            <descriptionCard style="width: 35%; padding-left: 5%" msg="I use a few different tools and languages. As for languages, I am confident in Java (front/back end), 
-            HTML, CSS, and JavaScript. I also know Swift (front/back end). However, I am still learning Swift. As for tools, I am familiar with Vue.js for website
-            development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I am familiar with all of these tools."/>
+            <descriptionCard class="infoCard" msg="I use a few different tools and languages. As for languages, I am confident in Java (front/back end), 
+            HTML, CSS, JavaScript, and Markdown. I also know Swift (front/back end). However, I am still learning Swift. As for tools, I am familiar with Vue.js for website
+            development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these tools."/>
         <div class="flex-spacer"></div>
             <h1 class="section-header">Programming Skills</h1>
         </div>
@@ -45,13 +45,13 @@
             <div class="background-decoration"></div>
             <h1 class="section-header">Experience</h1>
         <div class="flex-spacer"></div>
-            <descriptionCard style="width: 35%; padding-right: 10%" msg="I currently have no relevant work experience but hope to get an internship this Summer of 2023. 
+            <descriptionCard class="infoCardRight" msg="I currently have no relevant work experience but hope to get an internship this Summer of 2023. 
             I have however worked on some projects. I have recreated an existing website, I created my portfolio and this is actually the second version. View the
             original as well as my other projects in the project page."/>
         </div>
 
         <div class="row-items">
-            <descriptionCard style="width: 35%; padding-left: 5%" msg="My future plans consist of graduating from Kennesaw State University, deepening my knowledge in 
+            <descriptionCard class="infoCard" msg="My future plans consist of graduating from Kennesaw State University, deepening my knowledge in 
             programming and music, and also to travel to Japan."/>
             <div class="flex-spacer"></div>
             <h1 class="section-header">Future</h1>
@@ -60,7 +60,15 @@
 </template>
 
 <style scoped>
+    .infoCard {
+        width: 35%;
+        padding-left: 5%;
+    }
 
+    .infoCardRight {
+        width: 35%;
+        padding-right: 5%;
+    }
     a.link {
         cursor: pointer;
         display: flex;
@@ -123,6 +131,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 
     .row-items::before, .row-items::after {

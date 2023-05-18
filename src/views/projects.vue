@@ -9,9 +9,9 @@
           <h1>Projects</h1>
           <p>My projects come in various languages.</p>
           <p>Some may come as links to another page, while others come as downloads.</p>
-          <p>Click and drag to scroll through my projects.</p>
           <p>Hover over to view details.</p>
           <p>*Mobile not supported*</p>
+          <p class="important">CLICK AND DRAG TO SCROLL.</p>
         </div>
 
         <div id="image-track">
@@ -30,7 +30,7 @@
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Swift</p></div>
-                  <div class="langChip">XCode</div>
+                  <div class="langChip"><p>XCode</p></div>
                   <a class="langChip" href="SwiftApp.mov" download>Download</a>
                 </div>
 
@@ -42,7 +42,7 @@
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Java</p></div>
-                  <div class="langChip">JavaFX</div>
+                  <div class="langChip"><p>JavaFX</p></div>
                   <a class="langChip" href="ApplicationHub.zip" download>Download</a>
                 </div>
 
@@ -54,6 +54,8 @@
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Html</p></div>
+                  <div class="langChip"><p>CSS</p></div>
+                  <div class="langChip"><p>JavaScript</p></div>
                   <a class="langChip" href="BunkaBiker.zip" download>Download</a>
                 </div>
 
@@ -65,6 +67,8 @@
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Html</p></div>
+                  <div class="langChip"><p>CSS</p></div>
+                  <div class="langChip"><p>JavaScript</p></div>
                   <RouterLink class="langChip" to="/original-portfolio">Link</RouterLink>
                 </div>
 
@@ -76,7 +80,7 @@
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Java</p></div>
-                  <div class="langChip">JavaFX</div>
+                  <div class="langChip"><p>JavaFX</p></div>
                   <a class="langChip" href="SoftwareEngProject-main.zip" download>Download</a>
                 </div>
 
@@ -84,9 +88,20 @@
               </div>    
             </div>
 
-            <div class="track-item" id="comingSoon" draggable="false">
+            <div class="track-item" id="beSpoked" draggable="false">
               <div class="trackDescription">
-                <p>Coming Soon</p>
+                <div class="chips">
+                  <div class="langChip"><p>Vue.js</p></div>
+                  <div class="langChip"><p>MySQL</p></div>
+                  <div class="langChip"><p>LARGE FILE</p></div>
+                  <a class="langChip" target="_blank" href="https://github.com/surgosan/BeSpoked-Bikes-Commision-Tracker">Link</a>
+                </div>
+
+                <p>
+                  This is a full stack web application that allows the creation and ability to view in a table of a few objects.
+                  <br>
+                  Client: Vuejs | Backend: MySQL
+                </p>
               </div>    
             </div>
 
@@ -124,6 +139,10 @@
     a.link:hover {
       border: solid 1.5px var(--color-theme);
       background-color: var(--color-background-soft);
+    }
+
+    .important {
+      color: var(--color-theme);
     }
     .main {
         position: relative;
@@ -207,7 +226,7 @@
       padding: 2%;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
     }
 
     .langChip {
@@ -247,6 +266,10 @@
 
     #chessMaster {
       background: url(../assets/Photos/chessMaster.png);
+    }
+
+    #beSpoked {
+      background: url(../assets/Photos/beSpokedHome.png);
     }
 </style>
 

@@ -1,22 +1,23 @@
 <template>
     <div class="container">
-        <p>{{ msg }}</p>
+      <p>{{ msg }}</p>
     </div>
-</template>
-
-<script>
-    export default {
-        props: {
-            msg: String
-        }
-    }
-</script>
-
-<style scoped>
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-</style>
+  </template>
+  
+  <script setup>
+  import { defineProps } from 'vue';
+  
+  const props = defineProps({
+    msg: String
+  });
+  </script>
+  
+  <style scoped>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  </style>
+  

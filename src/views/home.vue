@@ -22,9 +22,7 @@
     <prgLang/>
     <hr>
     <h2><hoverColoredText innerText='"If not you, then who?'/></h2>
-    <h3>The <hoverColoredText innerText="world"/> will not do favors.
-        <br>Be not afraid to chase a <span style="color: var(--color-theme);">dream</span>.
-    </h3>
+    <h3>Full Stack Developer</h3>
 
     <div class="linkContainer">
       <RouterLink class="link" to="/about">About</RouterLink>
@@ -32,7 +30,7 @@
     </div>
 
     <p>This site was created using Vue.js
-      <br>The color scheme changes depending if your brower is in dark/light mode
+      <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
     </p>
   </header>
 
@@ -111,6 +109,10 @@
     a.link:hover {
       border: solid 1.5px var(--color-theme);
       background-color: var(--color-background-soft);
+    }
+
+    #colored {
+      color: var(--color-theme);
     }
 
   #profile {
