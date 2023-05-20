@@ -93,3 +93,16 @@ nav a {
 nav a.router-link-exact-active {
   color: var(--color-heading);
 }
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-heading);
+  border-radius: 1rem;
+}

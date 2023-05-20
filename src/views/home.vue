@@ -19,10 +19,10 @@
     <span id="profile"></span>
     <h1>Sergio Sanchez-Alvares</h1>
     <h2><hoverColoredText innerText="Student"/> | <hoverColoredText innerText="Musician"/> | <hoverColoredText innerText="Programmer"/></h2>
-    <prgLang/>
+    <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
     <hr>
-    <h2><hoverColoredText innerText='"If not you, then who?'/></h2>
-    <h3>Full Stack Developer</h3>
+    <h2><hoverColoredText innerText='Full Stack Developer'/></h2>
+    <h3>"If not you, then who?"</h3>
 
     <div class="linkContainer">
       <RouterLink class="link" to="/about">About</RouterLink>
@@ -44,7 +44,7 @@
     <a href="https://github.com/surgosan" target="_blank">GitHub: @surgosan</a>
     <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">Facebook: Sergio Sanchez</a>
     <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">Instagram: sergo.sanchez</a>
-    <p>Last Updated: 2023/05/08</p>
+    <p>Last Updated: 2023/05/19</p>
   </main>
 </template>
 

@@ -11,7 +11,7 @@
           <p>Some may come as links to another page, while others come as downloads.</p>
           <p>Hover over to view details.</p>
           <p>*Mobile not supported*</p>
-          <p class="important">CLICK AND DRAG TO SCROLL.</p>
+          <p class="important animate__animated animate__heartBeat">CLICK AND DRAG TO SCROLL.</p>
         </div>
 
         <div id="image-track">
@@ -143,6 +143,7 @@
 
     .important {
       color: var(--color-theme);
+      animation-delay: 2s;
     }
     .main {
         position: relative;
