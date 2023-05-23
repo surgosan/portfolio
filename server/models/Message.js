@@ -12,7 +12,7 @@ const Message = database.define('Message',
         
         date: {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: false,
         },
 
         first_name: {

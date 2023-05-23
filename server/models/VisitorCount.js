@@ -12,7 +12,7 @@ const VisitorCount = database.define('VisitorCount',
         visits: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            defaultValue: 0,
+            defaultValue: 1,
         },
         lastVisit: {
             type: DataTypes.DATE,

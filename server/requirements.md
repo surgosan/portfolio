@@ -28,3 +28,26 @@
 - **Visit Count**
   - Current Visit Count
   - Date
+
+## Methods
+
+- **Message**
+  - Create New Message
+  - Get Message by First Name
+  - Get All Messages
+
+- **Suggestion**
+  - Create New Suggestion
+  - Get Suggestion by First Name
+  - Get All Suggestions
+  - Fulfill Suggestion
+  - Delete Suggestion by ID
+
+- **Critism**
+  - Create new Critism
+  - Get Critism by Date
+  - Get All Critism
+
+- **Visit Count**
+  - New Visit
+  - Get All Visits

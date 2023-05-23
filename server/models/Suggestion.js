@@ -23,6 +23,12 @@ const Suggestion = database.define('Suggestion',
         message: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+        
+        fulfilled: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
 
