@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors())
-require('./routes')(app);
+// require('./routes')(app);
 const port = 8081;
 
 app.use(function(req, res, next) {
