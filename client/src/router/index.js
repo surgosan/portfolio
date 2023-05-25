@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import homePage from '../views/home.vue'
-import aboutPageVue from '@/views/aboutPage.vue'
-import projectsVue from '@/views/projects.vue'
-import missing from "@/views/missing.vue"
-import originalPortfolio from "@/views/originalPortfolio.vue"
+import { createRouter, createWebHistory } from 'vue-router';
+import homePage from '../views/home.vue';
+import aboutPageVue from '@/views/aboutPage.vue';
+import projectsVue from '@/views/projects.vue';
+import missing from "@/views/missing.vue";
+import originalPortfolio from "@/views/originalPortfolio.vue";
+import newAboutPageVue from '@/views/newAboutPage.vue';
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
   {
     path: '/about',
     name: 'about',
+    component: newAboutPageVue
+  },
+  {
+    path: '/aboutb',
+    name: 'aboutb',
     component: aboutPageVue
   },
   {
