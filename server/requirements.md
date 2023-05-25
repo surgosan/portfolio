@@ -8,7 +8,7 @@
 
 ## Models
 
-- **Message** _(Allows for realtime chat)_
+- **Message** _(Allows for realtime chat: Needs websocket)_
   - Id
   - Date
   - First Name _(Required)_
