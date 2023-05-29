@@ -5,6 +5,7 @@ import projectsVue from '@/views/projects.vue';
 import missing from "@/views/missing.vue";
 import originalPortfolio from "@/views/originalPortfolio.vue";
 import newAboutPageVue from '@/views/newAboutPage.vue';
+import testView from "@/views/secondaryViews/test.vue";
 
 const routes = [
   {
@@ -15,7 +16,10 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: newAboutPageVue
+    components: {
+      default: newAboutPageVue,
+      topicView: testView
+    }
   },
   {
     path: '/aboutb',
