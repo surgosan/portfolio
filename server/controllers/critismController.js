@@ -1,4 +1,4 @@
-const Critism = require('../models/Critism');
+const { Critism } = require('../models');
 const httpErrors = require('./httpsErrors');
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
         try
         {
             const critMessage = await Critism.create(req.body);
-            res.send("Thanks " + critMessage.first_name  + ". Your message was sent.") 
+            res.send("Thanks " + critMessage.first_name  + ". I value your feedback.") 
         }
         catch (error)
         {

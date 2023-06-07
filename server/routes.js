@@ -1,10 +1,23 @@
-const salesPersonController = require('./controllers/salesPersonController');
-const productController = require('./controllers/productController');
+const messageController = require('./controllers/messageController');
+const suggestionController = require('./controllers/suggestionController');
+const critismController = require('./controllers/critismController');
+const visitorController = require('./controllers/visitorCountController');
 
 module.exports = (app) => {
-    app.post('/salesPeople/new',salesPersonController.register);
-    app.post('/salesPeople/checkPhone', salesPersonController.checkPhoneNumber);
-    app.post('/salesPeople/get', salesPersonController.findById);
-    app.get('/salesPeople/getAll', salesPersonController.getAllSalespeople);
-    app.put('/products/edit', productController.editProductById);
+    app.post('/message/new', messageController.newMessage);
+    app.post('/message/getByName', messageController.getByName);
+    app.get('/message/getAll', messageController.getAllMessages);
+
+    app.post('/critism/new', critismController.newCrit);
+    app.post('/critism/getByName', critismController.getByName);
+    app.get('/critism/getAll', critismController.getAllMessages);
+
+    app.post('/suggestion/new', suggestionController.newSuggestion);
+    app.post('/suggestion/getByName', suggestionController.getSuggestionByFirstName);
+    app.get('/suggestion/getAll', suggestionController.getAllSuggestions);
+    app.put('/suggestion/fulfillById', suggestionController.fulfillSuggestionByID);
+    app.delete('/suggestion/deleteById', suggestionController.deleteSuggestionByID);
+
+    app.post('/visit/new', visitorController.newVisit);
+    app.get('/visit/getAll', visitorController.getAllVisits);
 }
