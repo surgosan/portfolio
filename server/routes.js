@@ -9,7 +9,6 @@ module.exports = (app) => {
     app.get('/message/getAll', messageController.getAllMessages);
 
     app.post('/critism/new', critismController.newCrit);
-    app.post('/critism/getByName', critismController.getByName);
     app.get('/critism/getAll', critismController.getAllMessages);
 
     app.post('/suggestion/new', suggestionController.newSuggestion);
