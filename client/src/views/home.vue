@@ -4,14 +4,21 @@
   import card from '../components/card.vue';
   import buttonRes from '../components/buttonRes.vue';
   import { RouterLink } from 'vue-router';
+  import Connection from '@/server/Connection';
+  import { ref, onMounted } from 'vue';
 
-  components: {
-    prgLang,
-    hoverColoredText,
-    card,
-    buttonRes
+  const visitCounter = ref(0);
+
+  const getVisitCount = async () => {
+    try {
+      const response = await Connection.getVisitCount();
+      console.log(response.data);
+      visitCounter.value = response.data;
+    } catch {
+      visitCounter.value = -1;
+    }
   }
-  
+  onMounted(getVisitCount);
 </script>
 
 <template>
@@ -32,6 +39,7 @@
     <p>This site was created using Vue.js
       <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
     </p>
+    <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times.</p>
   </header>
 
   <main>
