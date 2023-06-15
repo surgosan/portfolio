@@ -20,21 +20,11 @@ module.exports = {
 
   async getAllVisits(req, res) {
     try {
-      const visitorCounts = await VisitorCount.findAll();
-
-      if (visitorCounts.length === 0) {
-        const errorResponse = httpErrors.notFound('No visitor counts found.');
-
-        res.status(errorResponse.status).send({
-          error: errorResponse.message,
-        });
-      } else {
-        res.send(visitorCounts);
-      }
+      const count = await VisitorCount.count();
+      res.send({ count });
     } catch (error) {
       const errorMessage = error.message || 'An error occurred';
       const errorResponse = httpErrors.internalServerError(errorMessage);
-
       res.status(errorResponse.status).send({
         error: errorResponse.message,
       });

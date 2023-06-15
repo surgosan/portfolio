@@ -106,3 +106,15 @@ nav a.router-link-exact-active {
   background: var(--color-heading);
   border-radius: 1rem;
 }
+
+h1, h2, button, h3, label {
+  color: var(--color-heading);
+}
+
+p, a, ul, li {
+  color: var(--color-text);
+}
+
+button {
+  cursor: pointer;
+}
