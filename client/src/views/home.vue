@@ -34,6 +34,7 @@
 
     <div class="linkContainer">
       <RouterLink class="link" to="/about">About</RouterLink>
+      <RouterLink class="link" to="/suggestions">Suggestions</RouterLink>
       <RouterLink class="link" to="/projects">Projects</RouterLink>
     </div>
 

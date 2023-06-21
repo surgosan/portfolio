@@ -6,6 +6,7 @@ import missing from "@/views/missing.vue";
 import originalPortfolio from "@/views/originalPortfolio.vue";
 import newAboutPageVue from '@/views/newAboutPage.vue';
 import testView from "@/views/secondaryViews/test.vue";
+import suggestionsPageVue from '@/views/suggestionsPage.vue';
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/aboutb',
     name: 'aboutb',
     component: aboutPageVue
+  },
+  {
+    path: '/suggestions',
+    name: 'suggestions Page',
+    component: suggestionsPageVue
   },
   {
     path: '/projects',
