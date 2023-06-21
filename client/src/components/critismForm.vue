@@ -1,11 +1,9 @@
 <template>
     <main>
         <h3 class="title">Critism Form</h3>
-        <label for="date">Date</label>
-        <input id="date" type="date" required/>
         <label for="message">Message</label>
-        <textarea id="message" type="text" required/>
-        <button class="dialog-button" id="submit">Submit</button>
+        <textarea id="message" type="text" v-model="message"/>
+        <button class="dialog-button" id="submit" @click="sendMessage">Submit</button>
     </main>
 </template>
 
@@ -51,5 +49,36 @@
 </style>
 
 <script setup>
+    import { ref } from 'vue';
+    import Connection from '@/server/Connection';
 
+    const message = ref('');
+
+    const sendMessage = async () => {
+        var date = new Date();
+        var formattedDate = date.toLocaleDateString('en-US'); 
+
+        if(!verify()) {
+            alert("Fill in all Fields")
+            return;
+        }
+
+        const messageData = {
+            date: formattedDate,
+            message: message.value
+        }
+
+        try {
+            const response = await Connection.newCritism(messageData);
+            alert(response.data);
+        } catch {
+            alert("Error sending a message")
+        }
+        
+    }
+
+    const verify = () => {
+        const refArray = [message.value];
+        return refArray.every(value => value.trim().length > 0);
+    }
 </script>
