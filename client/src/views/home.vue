@@ -9,16 +9,17 @@
 
   const visitCounter = ref(0);
 
+
   const getVisitCount = async () => {
     try {
       const response = await Connection.getVisitCount();
-      console.log(response.data);
-      visitCounter.value = response.data;
+      visitCounter.value = response.data.count;
     } catch {
       visitCounter.value = -1;
     }
   }
   onMounted(getVisitCount);
+  //onMounted(newVisit);
 </script>
 
 <template>

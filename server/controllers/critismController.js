@@ -7,7 +7,7 @@ module.exports = {
         try
         {
             const critMessage = await Critism.create(req.body);
-            res.send("Thanks " + critMessage.first_name  + ". I value your feedback.") 
+            res.send("Thanks. I value your feedback.") 
         }
         catch (error)
         {

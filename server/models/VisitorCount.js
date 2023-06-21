@@ -9,11 +9,6 @@ const VisitorCount = database.define('VisitorCount',
             primaryKey: true,
             autoIncrement: true,
         },
-        visits: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 1,
-        },
         lastVisit: {
             type: DataTypes.DATE,
             allowNull: true,
@@ -22,7 +17,7 @@ const VisitorCount = database.define('VisitorCount',
         
     {
         timestamps: false,
-        modelName: 'VisitorCount',
+        modelName: 'VisitorCounts',
     }
 );
 

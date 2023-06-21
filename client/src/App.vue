@@ -1,9 +1,10 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import { RouterView } from 'vue-router';
   import messageForm from '@/components/messageForm.vue';
   import suggestionForm from './components/suggestionForm.vue';
   import critismForm from './components/critismForm.vue';
+  import Connection from '@/server/Connection';
 
   const dialogOpen = ref(false);
 
@@ -38,6 +39,19 @@
     closeDialogOptions();
      document.getElementById("critismForm").style.display = 'initial';
   }
+
+  const newVisit = async () => {
+    try {
+      var date = new Date();
+      var formattedDate = date.toLocaleDateString('en-US');  
+      const response = await Connection.newVisit({ lastVisit: formattedDate });
+      console.log(response);
+    } catch {
+      console.log("New visit was not recorded");
+    }
+  };
+
+  //onMounted(newVisit);
 </script>
 
 <template>

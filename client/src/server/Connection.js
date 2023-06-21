@@ -41,6 +41,11 @@ export default {
 
 
     //Visits Routes
-    
+    newVisit(lastVisit) {
+        return Api().post('/visit/new', lastVisit);
+    },
+    getVisitCount() {
+        return Api().get('/visit/getAll');
+    }
 
 };
