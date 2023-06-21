@@ -15,7 +15,7 @@ module.exports = (app) => {
     app.post('/suggestion/getByName', suggestionController.getSuggestionByFirstName);
     app.get('/suggestion/getAll', suggestionController.getAllSuggestions);
     app.put('/suggestion/fulfillById', suggestionController.fulfillSuggestionByID);
-    app.delete('/suggestion/deleteById', suggestionController.deleteSuggestionByID);
+    app.delete('/suggestion/deleteById/:id', suggestionController.deleteSuggestionByID);
 
     app.post('/visit/new', visitorController.newVisit);
     app.get('/visit/getAll', visitorController.getAllVisits);

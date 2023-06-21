@@ -7,6 +7,7 @@ import originalPortfolio from "@/views/originalPortfolio.vue";
 import newAboutPageVue from '@/views/newAboutPage.vue';
 import testView from "@/views/secondaryViews/test.vue";
 import suggestionsPageVue from '@/views/suggestionsPage.vue';
+import adminPage from '@/views/adminPage.vue';
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/suggestions',
     name: 'suggestions Page',
     component: suggestionsPageVue
+  },
+  {
+    path: '/admin/surgosan',
+    name: 'Admin Page',
+    component: adminPage
   },
   {
     path: '/projects',

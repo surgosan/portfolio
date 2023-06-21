@@ -36,8 +36,8 @@ export default {
         return Api().put('/suggestion/fulfillById', Id);
     },
     deleteSuggestionById(Id) {
-        return Api().delete('/suggestion/deleteById', Id);
-    },
+        return Api().delete(`/suggestion/deleteById/${Id}`);
+    },      
 
 
     //Visits Routes

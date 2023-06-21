@@ -1,17 +1,6 @@
 <template>
     <main>
-        <h1 class="section-title">Suggestions</h1>
-        <RouterLink to="/" class="link">Return</RouterLink>
         <div class="hBox">
-            <div class="newSuggestion">
-                <h2 class="section-title">Make a new suggestion!</h2>
-                <p>*Inappropriate suggestions will be deleted*</p>
-                <label for="fName">First Name</label>
-                <input id="fName" type="text" v-model="firstName" maxlength="100">
-                <label for="message">Message</label>
-                <textarea id="message" type="text" v-model="message"/>
-                <button class="dialog-button" id="submit" @click="sendMessage">Submit</button>
-            </div>
             <div class="display-table">
                 <h2 class="section-title">Suggestions List</h2>
                 <div class="search">
@@ -24,6 +13,7 @@
                     <table>
                         <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Date</th>
                             <th>First Name</th>
                             <th>Message</th>
@@ -32,6 +22,7 @@
                         </thead>
                         <tbody>
                         <tr v-for="suggestion in suggestionList" :key="suggestionList.id">
+                            <td>{{ suggestion.id }}</td>
                             <td>{{ suggestion.date }}</td>
                             <td>{{ suggestion.first_name }}</td>
                             <td>{{ suggestion.message }}</td>
@@ -53,9 +44,6 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 5rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
     }
 
     label {
@@ -108,12 +96,6 @@
         align-self: flex-end;
     }
 
-    .link {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
     .hBox {
         height: 100%;
         width: 80%;
@@ -121,18 +103,8 @@
         gap: 5rem;
     }
 
-    .newSuggestion {
-        padding: 2rem;
-        border: solid 2px var(--color-heading);
-        border-radius: 1rem;
-        background-color: var(--color-background-soft);
-        width: 25%;
-        height: fit-content;
-        align-self: flex-start;
-    }
-
     .display-table {
-        padding: 2rem;
+        padding: 1rem;
         border: solid 2px var(--color-heading);
         border-radius: 1rem;
         background-color: var(--color-background-soft);
@@ -145,38 +117,10 @@
     import { ref, onMounted } from 'vue';
     import Connection from '@/server/Connection';
 
-    const firstName = ref('');
-    const message = ref('');
     const suggestionList = ref([]);
     const nameInput = ref('');
     const searching = ref(false);
 
-    const sendMessage = async () => {
-        var date = new Date();
-        var formattedDate = date.toLocaleDateString('en-US'); 
-
-        if(!verify()) {
-            alert("Fill in all Fields")
-            return;
-        }
-
-        const messageData = {
-            date: formattedDate,
-            first_name: firstName.value,
-            message: message.value
-        }
-
-        try {
-            const response = await Connection.newSuggestion(messageData);
-            alert(response.data);
-            refreshComponent();
-        } catch {
-            alert("Error sending a message")
-        }
-
-        firstName.value = "";
-        message.value = "";
-    }
 
     const verify = () => {
         const refArray = [firstName.value, message.value];
@@ -229,13 +173,6 @@
             alert("No suggestions found by the name of " + nameInput.value + ".");
         }
     }
-    
-    const refreshComponent = () => {
-        // Increment the key value to trigger component refresh
-        setTimeout(() => {
-            getSuggestions();
-        }, 500);
-    };
 
     onMounted(getSuggestions);
 </script>

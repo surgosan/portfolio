@@ -64,7 +64,7 @@ module.exports = {
 
   async deleteSuggestionByID(req, res) {
     try {
-      const { id } = req.body;
+      const { id } = req.params;
       const deletedSuggestion = await Suggestion.destroy({ where: { id } });
 
       if (deletedSuggestion === 0) {

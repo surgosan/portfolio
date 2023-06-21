@@ -23,6 +23,7 @@
 </script>
 
 <template>
+  <RouterLink id="hiddenLink" to="/admin/surgosan"/>
   <header>
     <span id="profile"></span>
     <h1>Sergio Sanchez-Alvares</h1>
@@ -74,6 +75,16 @@
 
   main > a {
     color: var(--color-text);
+  }
+
+  #hiddenLink {
+    cursor: default;
+    border: solid 2px red;
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    width: 5rem;
+    aspect-ratio: 1;
   }
 
   .linkContainer {

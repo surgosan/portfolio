@@ -4,6 +4,7 @@ node_modules
 main-database-connection-details.txt
 dbInstance.js
 server/dbInstance.js
+todo.txt
 
 
 # local env files
