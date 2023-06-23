@@ -23,7 +23,6 @@
 </script>
 
 <template>
-  <RouterLink id="hiddenLink" to="/admin/surgosan"/>
   <header>
     <span id="profile"></span>
     <h1>Sergio Sanchez-Alvares</h1>
@@ -39,7 +38,7 @@
       <RouterLink class="link" to="/projects">Projects</RouterLink>
     </div>
 
-    <p>This site was created using Vue.js
+    <p>This site was created using Vue.js and MYSQL
       <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
     </p>
     <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times.</p>
@@ -76,17 +75,6 @@
   main > a {
     color: var(--color-text);
   }
-
-  #hiddenLink {
-    cursor: default;
-    border: solid 2px red;
-    position: absolute;
-    top: 5%;
-    left: 45%;
-    width: 5rem;
-    aspect-ratio: 1;
-  }
-
   .linkContainer {
     position: relative;
     width: 100%;

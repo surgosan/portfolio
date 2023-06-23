@@ -119,6 +119,7 @@
         width: 80%;
         align-self: center;
         gap: 5rem;
+        padding-bottom: 5rem;
     }
 
     .newSuggestion {
@@ -137,13 +138,17 @@
         border-radius: 1rem;
         background-color: var(--color-background-soft);
         flex-grow: 1;
-        height: 100%;
+        height: fit-content;
+        align-self: flex-start;
     }
 </style>
 
 <script setup>
     import { ref, onMounted } from 'vue';
     import Connection from '@/server/Connection';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
 
     const firstName = ref('');
     const message = ref('');
@@ -156,7 +161,7 @@
         var formattedDate = date.toLocaleDateString('en-US'); 
 
         if(!verify()) {
-            alert("Fill in all Fields")
+            createNotification("Fill in all Fields")
             return;
         }
 
@@ -168,10 +173,10 @@
 
         try {
             const response = await Connection.newSuggestion(messageData);
-            alert(response.data);
+            createNotification(response.data);
             refreshComponent();
         } catch {
-            alert("Error sending a message")
+            createNotification("Error sending a message")
         }
 
         firstName.value = "";
@@ -211,7 +216,7 @@
             const response = await Connection.getAllSuggestions();
             suggestionList.value = response.data;
         } catch (error) {
-            alert("There was an issue loading suggestions");
+            createNotification("Suggestions are currently unavailable");
         }
     }
 
@@ -226,7 +231,7 @@
             suggestionList.value = response.data;
             searchBar();
         } catch {
-            alert("No suggestions found by the name of " + nameInput.value + ".");
+            createNotification("No suggestions found by the name of " + nameInput.value + ".");
         }
     }
     
@@ -238,4 +243,21 @@
     };
 
     onMounted(getSuggestions);
+
+    const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+    };
+
+    const removeExpiredNotifications = () => {
+        setTimeout(() => {
+            store.commit('removeOldestNotification');
+        }, 10000);
+    };
 </script>

@@ -11,6 +11,7 @@
   flex-direction: row;
   font-weight: normal;
   gap: 2%;
+  overflow-x: hidden;
 }
 
 #app::before {

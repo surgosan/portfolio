@@ -81,6 +81,9 @@
 <script setup>
     import { ref, onMounted } from 'vue';
     import Connection from '@/server/Connection';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
 
     const criticList = ref([]);
 
@@ -89,9 +92,26 @@
             const response = await Connection.getCritisms();
             criticList.value = response.data;
         } catch (error) {
-            alert("There was an issue loading suggestions");
+            createNotification("There was an issue loading Critisms");
         }
     }
 
     onMounted(getSuggestions);
+
+    const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+  };
+
+  const removeExpiredNotifications = () => {
+    setTimeout(() => {
+      store.commit('removeOldestNotification');
+    }, 10000);
+  };
 </script>

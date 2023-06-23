@@ -51,6 +51,9 @@
 <script setup>
     import { ref } from 'vue';
     import Connection from '@/server/Connection';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
 
     const message = ref('');
 
@@ -59,7 +62,7 @@
         var formattedDate = date.toLocaleDateString('en-US'); 
 
         if(!verify()) {
-            alert("Fill in all Fields")
+            createNotification("Fill in all Fields")
             return;
         }
 
@@ -70,9 +73,9 @@
 
         try {
             const response = await Connection.newCritism(messageData);
-            alert(response.data);
+            createNotification(response.data);
         } catch {
-            alert("Error sending a message")
+            createNotification("Error sending a message");
         }
         
     }
@@ -81,4 +84,21 @@
         const refArray = [message.value];
         return refArray.every(value => value.trim().length > 0);
     }
+
+    const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+    };
+
+    const removeExpiredNotifications = () => {
+        setTimeout(() => {
+            store.commit('removeOldestNotification');
+        }, 10000);
+    };
 </script>

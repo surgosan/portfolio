@@ -1,10 +1,15 @@
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref } from 'vue';
   import { RouterView } from 'vue-router';
+  import { useStore } from 'vuex';
   import messageForm from '@/components/messageForm.vue';
   import suggestionForm from './components/suggestionForm.vue';
   import critismForm from './components/critismForm.vue';
   import Connection from '@/server/Connection';
+  import notification from './components/notification.vue';
+
+  const store = useStore();
+
 
   const dialogOpen = ref(false);
 
@@ -52,6 +57,23 @@
   };
 
   //onMounted(newVisit);
+
+  const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+  };
+
+  const removeExpiredNotifications = () => {
+    setTimeout(() => {
+      store.commit('removeOldestNotification');
+    }, 10000);
+  };
 </script>
 
 <template>
@@ -85,6 +107,10 @@
       <critismForm id="critismForm"/>
     </div>
     </dialog>
+
+    <div class="notification_container">
+      <notification/>
+    </div>
 </template>
 
 <style scoped>
@@ -99,5 +125,12 @@
 
   #critismForm {
     display: none;
+  }
+
+  .notification_container {
+    position: fixed;
+    bottom: 12%;
+    right: 1.5%;
+    z-index: 99;
   }
 </style>

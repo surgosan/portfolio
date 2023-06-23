@@ -25,6 +25,7 @@
             </div>
 
             <div class="display">
+                <h1>Display</h1>
                 <component :is="selectedComponentComponent" :key="keyUpdater"/>
             </div>
         </div>
@@ -107,12 +108,15 @@
 
     .display {
         flex-grow: 1;
-        height: 100%;
+        min-height: 100%;
+        align-self: flex-start;
+        overflow: auto;
     }
 
     #suggestionsComponent, #messagesComponent, #criticsComponent {
         display: none;
     }
+    
 </style>
 
 
@@ -123,11 +127,17 @@ import adminMessages from '@/components/adminMessages.vue';
 import adminCritisms from '@/components/adminCritisms.vue';
 import adminVisits from '@/components/adminVisits.vue';
 import Connection from '@/server/Connection';
+import { useStore } from 'vuex';
+
+const store = useStore();
 
 const selectedComponent = ref('messages');
 const fulfillingId = ref(0);
 const deletionId = ref(0);
 const keyUpdater = ref(0);
+
+fulfillingId.value = null;
+deletionId.value = null;
 
 const verify = (id) => {
     return id > 0;
@@ -140,8 +150,10 @@ const fulfill = async () => {
 
     try {
         const response = await Connection.fulfillSuggestionById({ id: fulfillingId.value });
+        createNotification(response.data);
+        fulfillingId.value = null;
     } catch (error) {
-        alert("no");
+        createNotification("Error");
     }
     refreshComponent();
 };
@@ -153,7 +165,10 @@ const deleteSug = async () => {
 
   try {
     const response = await Connection.deleteSuggestionById(deletionId.value);
+    createNotification(response.data);
+    deletionId.value = null;
   } catch {
+    createNotification("Error");
   }
   refreshComponent();
 };
@@ -178,4 +193,21 @@ const refreshComponent = () => {
       keyUpdater.value += 1;
   }, 500);
 };
+
+const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+  };
+
+  const removeExpiredNotifications = () => {
+    setTimeout(() => {
+      store.commit('removeOldestNotification');
+    }, 10000);
+  };
 </script>

@@ -116,6 +116,9 @@
 <script setup>
     import { ref, onMounted } from 'vue';
     import Connection from '@/server/Connection';
+    import { useStore } from 'vuex';
+
+    const store = useStore();
 
     const suggestionList = ref([]);
     const nameInput = ref('');
@@ -155,7 +158,7 @@
             const response = await Connection.getAllSuggestions();
             suggestionList.value = response.data;
         } catch (error) {
-            alert("There was an issue loading suggestions");
+            createNotification("There was an issue loading suggestions");
         }
     }
 
@@ -170,9 +173,26 @@
             suggestionList.value = response.data;
             searchBar();
         } catch {
-            alert("No suggestions found by the name of " + nameInput.value + ".");
+            createNotification("No suggestions found by the name of " + nameInput.value + ".");
         }
     }
 
     onMounted(getSuggestions);
+
+    const createNotification = (message) => {
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: message,
+    };
+
+    store.commit('addNotification', notification);
+
+    removeExpiredNotifications();
+  };
+
+  const removeExpiredNotifications = () => {
+    setTimeout(() => {
+      store.commit('removeOldestNotification');
+    }, 10000);
+  };
 </script>
