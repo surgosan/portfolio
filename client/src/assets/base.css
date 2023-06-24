@@ -150,3 +150,7 @@ td {
 td:hover {
   color: var(--color-heading);
 }
+
+svg path {
+  fill: var(--color-theme);
+}

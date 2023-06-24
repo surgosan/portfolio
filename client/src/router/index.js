@@ -1,11 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import homePage from '../views/home.vue';
-import aboutPageVue from '@/views/aboutPage.vue';
 import projectsVue from '@/views/projects.vue';
 import missing from "@/views/missing.vue";
 import originalPortfolio from "@/views/originalPortfolio.vue";
-import newAboutPageVue from '@/views/newAboutPage.vue';
-import testView from "@/views/secondaryViews/test.vue";
+import aboutPage from '@/views/aboutPage.vue';
 import suggestionsPageVue from '@/views/suggestionsPage.vue';
 import adminPage from '@/views/adminPage.vue';
 
@@ -18,15 +16,7 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    components: {
-      default: newAboutPageVue,
-      topicView: testView
-    }
-  },
-  {
-    path: '/aboutb',
-    name: 'aboutb',
-    component: aboutPageVue
+    component: aboutPage
   },
   {
     path: '/suggestions',
