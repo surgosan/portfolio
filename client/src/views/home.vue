@@ -42,7 +42,6 @@
       <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
     </p>
     <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times.</p>
-    <p>Backend is not yet available</p>
   </header>
 
   <main>

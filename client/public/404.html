@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uh Oh</title>
+</head>
+<body>
+    <main>    
+        <h1>Looks like the site is down. Most likely, I am working on the site and have it down so it should be resolved soon!</h1>
+    </main>
+</body>
+</html>
+
+<style>
+    
+    body {
+        margin: 0;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100dvh;
+    }
+
+    main {
+        width: 60%;
+        text-align: center;
+    }
+
+    h1 {
+        color: #2c3e50;
+    }
+
+    body::before {
+        position: absolute;
+        bottom: 5%;
+        right: 0%;
+        content: "";
+        width: 60%;
+        height: 50%;
+        background-color: rgba(93, 139, 244, .8);
+        z-index: -1;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        body {
+            background: #181818;
+        }
+
+        h1 {
+            color: white
+        }
+
+        body::before {
+            background-color: rgba(214, 90, 49, .8);
+        }
+    }
+</style>
