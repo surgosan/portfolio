@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import { RouterView } from 'vue-router';
   import { useStore } from 'vuex';
   import messageForm from '@/components/messageForm.vue';
