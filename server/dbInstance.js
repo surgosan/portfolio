@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 
-const database = new Sequelize('portfolio', 'USERNAME', 'PASSWORD', {
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+
+const database = new Sequelize('portfolio', 'username', 'password', {
     host: 'aws.connect.psdb.cloud',
     dialect:'mysql',
     dialectOptions: {
