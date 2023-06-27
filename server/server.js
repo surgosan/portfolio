@@ -22,6 +22,6 @@ database.sync()
       console.log("Synced");
   
       app.listen(port, () => {
-          console.log(`Example app listening on port ${port}`)
+          console.log(`Server is running on port ${port}`)
       })
   })
