@@ -46,7 +46,7 @@
 
   <main>
 
-    <card id="cardOne" title="Download my Resume" file="Sergio-Sanchez-Alvares.pdf" download/>
+    <card id="cardOne" title="Download my Resume" file="Sergio Sanchez-Alvares.pdf" download/>
 
     <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 
