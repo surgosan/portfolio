@@ -54,7 +54,7 @@
     <a href="https://github.com/surgosan" target="_blank">GitHub: @surgosan</a>
     <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">Facebook: Sergio Sanchez</a>
     <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">Instagram: sergo.sanchez</a>
-    <p>Last Updated: 2023/06/27</p>
+    <p>Last Updated: 2023/06/28</p>
   </main>
 </template>
 

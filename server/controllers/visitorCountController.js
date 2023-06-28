@@ -8,7 +8,7 @@ module.exports = {
 			console.log(lastVisit);
 			const visit = await VisitorCount.create({lastVisit});
 
-			res.send('New visitor on ' + lastVisit);
+			res.send('Welcome');
 		} catch (error) {
 			const errorMessage = error.message || 'An error occurred';
 			const errorResponse = httpErrors.internalServerError(errorMessage);
