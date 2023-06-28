@@ -52,7 +52,7 @@ const newVisit = async () => {
     const formattedDate = currentDate.toLocaleString('en-US', options);
 
     const response = await Connection.newVisit({ lastVisit: formattedDate });
-    createNotification(response);
+    createNotification(response.data);
   } catch {
     console.log("New visit was not recorded");
   }
