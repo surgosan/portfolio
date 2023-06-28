@@ -78,6 +78,8 @@
         try {
             const response = await Connection.newMessage(messageData);
             createNotification(response.data);
+            firstName.value = '';
+            message.value = '';
         } catch {
             createNotification("Error sending a message");
         }

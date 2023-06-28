@@ -26,7 +26,7 @@
                             <td>{{ suggestion.date }}</td>
                             <td>{{ suggestion.first_name }}</td>
                             <td>{{ suggestion.message }}</td>
-                            <td>{{ suggestion.fulfilled }}</td>
+                            <td>{{ getSuggestionStatus(suggestion.fulfilled) }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -128,6 +128,10 @@
     const verify = () => {
         const refArray = [firstName.value, message.value];
         return refArray.every(value => value.trim().length > 0);
+    }
+
+    const getSuggestionStatus = (fulfilled) => {
+        return fulfilled ? "√" : "X";
     }
 
     const searchBar = () => {

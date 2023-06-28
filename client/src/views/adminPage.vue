@@ -10,6 +10,8 @@
                 <label class="navigation" :class="{ active: selectedComponent === 'suggestions' }" for="suggestionRadio">View Suggestions</label>
                 <input class="radio" type="radio" name="navSelection" id="critismRadio" value="criticisms" v-model="selectedComponent">
                 <label class="navigation" :class="{ active: selectedComponent === 'criticisms' }" for="critismRadio">View Criticisms</label>
+                <input class="radio" type="radio" name="navSelection" id="visitRadio" value="visits" v-model="selectedComponent">
+                <label class="navigation" :class="{ active: selectedComponent === 'visits' }" for="visitRadio">View Visits</label>
                 <!-- <button class="link navigation">View Visits</button> -->
 
                 <div class="suggestionControls">
@@ -21,6 +23,11 @@
 
                     <label for="deletion">Deleting Id:</label>
                     <input id="deletion" type="number" @keyup.enter="deleteSug" v-model="deletionId"/>
+                </div>
+
+                <div class="visitControls">
+                        <h2 class="title">Visit Controls</h2>
+                        <button @click='deleteRecentVisit'>Delete Recent Visit</button>
                 </div>
             </div>
 
@@ -182,10 +189,23 @@ const selectedComponentComponent = computed(() => {
     return adminSuggestions;
   } else if (selectedComponent.value === 'criticisms') {
     return adminCritisms;
-  } else {
+  } else if(selectedComponent.value === 'visits') {
+    return adminVisits;
+  }
+  else {
     return null; // Handle other cases if needed
   }
 });
+
+const deleteRecentVisit = async () => {
+    try {
+        const response = await Connection.deleteLastVisit();
+        createNotification(response.data);
+    } catch {
+        createNotification("Unable to delete recent visit");
+    }
+    refreshComponent();
+}
 
 const refreshComponent = () => {
   // Increment the key value to trigger component refresh

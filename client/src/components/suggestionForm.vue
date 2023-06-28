@@ -62,8 +62,8 @@
     const message = ref('');
 
     const sendMessage = async () => {
-        var date = new Date();
-        var formattedDate = date.toLocaleDateString('en-US'); 
+        let date = new Date();
+        let formattedDate = date.toLocaleDateString('en-US');
 
         if(!verify()) {
             createNotification("Fill in all Fields")
@@ -78,7 +78,8 @@
 
         try {
             const response = await Connection.newSuggestion(messageData);
-            
+            firstName.value = '';
+            message.value = '';
             createNotification(response.data);
         } catch {
             createNotification("Error sending a message");

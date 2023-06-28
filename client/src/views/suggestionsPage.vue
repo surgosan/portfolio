@@ -35,7 +35,7 @@
                             <td>{{ suggestion.date }}</td>
                             <td>{{ suggestion.first_name }}</td>
                             <td>{{ suggestion.message }}</td>
-                            <td>{{ suggestion.fulfilled }}</td>
+                            <td>{{ getSuggestionStatus(suggestion.fulfilled) }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -157,8 +157,8 @@
     const searching = ref(false);
 
     const sendMessage = async () => {
-        var date = new Date();
-        var formattedDate = date.toLocaleDateString('en-US'); 
+        let date = new Date();
+        let formattedDate = date.toLocaleDateString('en-US');
 
         if(!verify()) {
             createNotification("Fill in all Fields")
@@ -209,6 +209,10 @@
         searchBar();
         getSuggestions();
         nameInput.value = "";
+    }
+
+    const getSuggestionStatus = (fulfilled) => {
+        return fulfilled ? "√" : "X";
     }
 
     const getSuggestions = async () => {
