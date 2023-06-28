@@ -84,6 +84,7 @@ a.link:hover {
   background: var(--color-background-soft);
   border: solid 2px var(--color-heading);
   border-radius: 1rem;
+  z-index: +5;
 }
 
 .dialog-title {
