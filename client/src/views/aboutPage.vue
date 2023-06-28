@@ -248,7 +248,7 @@
         content: "";
         width: 0%;
         height: 2px;
-        background: red;
+        background: var(--color-theme);
         transition: .5s;
     }
 
