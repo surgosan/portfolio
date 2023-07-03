@@ -15,7 +15,7 @@ const dialogOpen = ref(false);
 const toggleDialog = () => {
   dialogOpen.value = !dialogOpen.value;
 
-  if (document.getElementById("selections").style.display == "none") {
+  if (document.getElementById("selections").style.display === "none") {
       document.getElementById("selections").style.display = "flex";
   }
     document.getElementById("messageForm").style.display = "none";
@@ -64,7 +64,7 @@ const newVisit = async () => {
   }
 };
 
-  onMounted(newVisit);
+ onMounted(newVisit);
 
 const createNotification = (message) => {
   const notification = {
@@ -89,7 +89,6 @@ const removeExpiredNotifications = () => {
   <div class="contact-service" @click="toggleDialog">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0,0,256,256"
       width="50px"
       height="50px"
@@ -107,9 +106,7 @@ const removeExpiredNotifications = () => {
           stroke-dasharray=""
           stroke-dashoffset="0"
           font-family="none"
-          font-weight="none"
           font-size="none"
-          text-anchor="none"
           style="mix-blend-mode: normal"
         >
           <g transform="scale(5.12,5.12)">
@@ -134,7 +131,7 @@ const removeExpiredNotifications = () => {
         <button class="dialog-button" @click="openSuggestion">
           Suggestion
         </button>
-        <button class="dialog-button" @click="openCritism">Critism</button>
+        <button class="dialog-button" @click="openCritism">Criticism</button>
       </div>
       <messageForm id="messageForm" />
       <suggestionForm id="suggestionForm" />

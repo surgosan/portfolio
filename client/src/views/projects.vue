@@ -12,6 +12,12 @@
           <p>Hover over to view details.</p>
           <p>*Mobile not supported*</p>
           <p class="important animate__animated animate__heartBeat">CLICK AND DRAG TO SCROLL.</p>
+          <div class="cursor-demonstration">
+          <svg xmlns="http://www.w3.org/2000/svg" id="cursorSVG" viewBox="0,0,256,256" fill-rule="nonzero">
+              <g transform="translate(-20.48,-20.48) scale(1.16,1.16)">
+                  <g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none" style="mix-blend-mode: normal"><g transform="translate(-1.02494,-6.65657) scale(5.12,5.12)">
+                      <path id="cursorPath" d="M29.69922,47c-0.12109,0 -0.24219,-0.02344 -0.35937,-0.06641c-0.25,-0.09766 -0.44922,-0.28906 -0.55859,-0.53516l-5.83594,-13.49219l-7.26172,6.82422c-0.28906,0.27344 -0.71484,0.34375 -1.08203,0.1875c-0.36328,-0.15625 -0.60156,-0.51953 -0.60156,-0.91797v-33c0,-0.39844 0.23438,-0.75781 0.60156,-0.91797c0.36328,-0.15625 0.78906,-0.08594 1.08203,0.1875l24,22.39844c0.28906,0.26953 0.39063,0.6875 0.26172,1.05859c-0.12891,0.375 -0.46484,0.63672 -0.85937,0.67188l-10.18359,0.875l6.10547,13.3125c0.10938,0.23828 0.12109,0.51563 0.02734,0.76563c-0.09375,0.25 -0.27734,0.44922 -0.51953,0.55859l-4.40234,2c-0.13281,0.05859 -0.26953,0.08984 -0.41406,0.08984z"></path></g></g></g></svg>
+          </div>
         </div>
 
         <div id="image-track">
@@ -26,7 +32,7 @@
               </div>    
             </div>
 
-            <div class="track-item" id="swift" draggable="false" download>
+            <div class="track-item" id="swift" draggable="false">
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Swift</p></div>
@@ -38,7 +44,7 @@
               </div>    
             </div>
 
-            <div class="track-item" id="applicationHUb" draggable="false" download>
+            <div class="track-item" id="applicationHUb" draggable="false">
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Java</p></div>
@@ -50,7 +56,7 @@
               </div>    
             </div>
 
-            <div id="bunkabiker" target="_blank" class="track-item" draggable="false" download>
+            <div id="bunkabiker" class="track-item" draggable="false">
               <div class="trackDescription">
                 <div class="chips">
                   <div class="langChip"><p>Html</p></div>
@@ -165,6 +171,33 @@
       align-items: center;
     }
 
+    .cursor-demonstration {
+      width: 15rem;
+      position: absolute;
+      top: 45%;
+      right: 10%;
+    }
+
+    #cursorSVG {
+      position: absolute;
+      width: 3rem;
+      top: 0;
+      right: 0;
+      display: none;
+    }
+
+    @keyframes cursorDemo {
+		  0% {right: 0}
+      75% {right: 100%}
+      100% {right: 100%}
+	}
+
+    #cursorPath {
+      fill: transparent;
+      stroke: var(--color-theme);
+      stroke-width: 2px;
+    }
+
     .return {
       position: absolute;
       top: 25%;
@@ -202,7 +235,7 @@
     .trackDescription {
       position: absolute;
       bottom: -40%;
-      left: 0%;
+      left: 0;
       width: 100%;
       height: fit-content;
       padding: 3%;
@@ -285,12 +318,86 @@ import { RouterLink } from 'vue-router';
     var newPercentage = 0;
     var displayPercentage = 0;
     var mousedown = false;
+    let movedItems = false;
+    let intervalInt = 0;
+
+    setTimeout(() => {
+      if(!movedItems)
+      {
+        const interval = setInterval(() => {
+          cursorAnimation();
+          intervalInt++;
+  
+          if(intervalInt > 5)
+          {
+            clearInterval(interval);
+            document.getElementById('cursorSVG').style.display = 'none';
+          }
+        }, 5000);
+      }
+
+    }, 1000);
+
+  const cursorMovement = [
+    { right: '0%' },
+    { right: '100%' }
+  ]
+
+  const cursorFill = [
+    { fill: 'transparent' },
+    { fill: 'transparent' },
+    { fill: 'transparent' },
+    { fill: 'transparent' },
+    { fill: 'transparent' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'var(--color-theme)' },
+    { fill: 'transparent' },
+    { fill: 'transparent' },
+  ]
+
+    function cursorAnimation()
+    {
+      document.getElementById('cursorSVG').style.display = 'initial';
+      setTimeout(() => {
+        document.getElementById('cursorPath').animate(cursorFill, {
+          duration: 2000,
+          easing: 'linear',
+          fill: 'forwards',
+          iterations: 1,
+          delay: 250
+        })
+        document.getElementById('cursorSVG').animate(cursorMovement, {
+          duration: 2000,
+          easing: 'ease',
+          fill: 'forwards' ,
+          iterations: 1,
+          delay: 500})
+        }, 2000)
+    }
 
     const locateMouse = e => e.clientX;
 
     window.onmousemove = e => {
       if(mousedown)
       {
+        movedItems = true;
         var mouseDelta = (initialMouseLocation - locateMouse(e));
         const maxDelta = windowWidth/2;
         currentPercentage = (mouseDelta/maxDelta)* -50;
@@ -315,7 +422,7 @@ import { RouterLink } from 'vue-router';
       initialMouseLocation = locateMouse(e);
     }
 
-    window.onmouseup = e => {
+    window.onmouseup = () => {
       mousedown = false;
       prevLocationPercentage = newPercentage;
     }

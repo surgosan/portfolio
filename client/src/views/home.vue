@@ -30,7 +30,6 @@
     <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
     <hr>
     <h2><hoverColoredText innerText='Full Stack Developer'/></h2>
-    <h3>"If not you, then who?"</h3>
 
     <div class="linkContainer">
       <RouterLink class="link" to="/about">About</RouterLink>
@@ -38,10 +37,10 @@
       <RouterLink class="link" to="/projects">Projects</RouterLink>
     </div>
 
-    <p>This site was created using Vue.js and MYSQL
+    <p>This site was created using <span id='colored'>Vue.js</span> and <span id='colored'>MYSQL</span>
       <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
     </p>
-    <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times.</p>
+    <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times since 2023/06/26.</p>
   </header>
 
   <main>
@@ -54,7 +53,7 @@
     <a href="https://github.com/surgosan" target="_blank">GitHub: @surgosan</a>
     <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">Facebook: Sergio Sanchez</a>
     <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">Instagram: sergo.sanchez</a>
-    <p>Last Updated: 2023/06/28</p>
+    <p>Last Updated: 2023/06/30</p>
   </main>
 </template>
 

@@ -91,7 +91,7 @@
 
                 <div class="toolTip">
                     <p class="toolTipText">VueJS</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="256px" height="256px" fill-rule="nonzero"><g transform="translate(-24,-24) scale(1.1875,1.1875)"><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M3,6l13,22l13,-22h-10l-3,5.30078l-3,-5.30078zM6.5,8h3.77148l5.72852,10l5.72852,-10h3.77148l-9.5,16.09961z"></path></g></g></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="256px" height="256px" fill-rule="nonzero"><g transform="translate(-24,-24) scale(1.1875,1.1875)"><g fill="#000000" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M3,6l13,22l13,-22h-10l-3,5.30078l-3,-5.30078zM6.5,8h3.77148l5.72852,10l5.72852,-10h3.77148l-9.5,16.09961z"></path></g></g></g></svg>
                 </div>
 
                 <div class="toolTip">
@@ -218,7 +218,6 @@
         align-items: center;
         min-width: 30%;
         height: 100%;
-        gap: 0rem;
         border-right: solid 2px var(--color-heading);
     }
 
@@ -246,7 +245,7 @@
         bottom: 0;
         right: 50%;
         content: "";
-        width: 0%;
+        width: 0;
         height: 2px;
         background: var(--color-theme);
         transition: .5s;
@@ -257,7 +256,7 @@
         bottom: 0;
         left: 50%;
         content: "";
-        width: 0%;
+        width: 0;
         height: 2px;
         background: var(--color-theme);
         transition: .5s;
@@ -282,7 +281,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
         padding: 5rem;
         padding-bottom: 10rem;
     }
@@ -398,8 +396,8 @@
     const hobbies = "I am a musician and perform on the weekends. I ride a motorcycle, so I like to take trips and off-roading. I also like photography and go out to take photos sometimes. I also really enjoy programming. I never get tired and sometimes just program for fun.";
     const plans = "My future plans consist of graduating from Kennesaw State University, deepening my knowledge in programming and music, and also to travel to Japan.";
     const workEthic = "I am well organized and like to work hard and smart. I enjoy problem solving and am independent, but I am always willing to work with others as well.";
-    const programmingTools = "I use a few different tools and languages. As for languages, I am confident in HTML, CSS, JavaScript, Java, and Markdown. I also know Swift. However, I am still learning Swift. As for tools, I am familiar with Vue.js for website development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these too";
-    const programmingExperience = "I currently have no relevant work experience but hope to get an internship this Summer of 2023. I have however worked on some projects. I have recreated an existing website, I created my portfolio and this is actually the second version. View the original as well as my other projects in the project page.";
+    const programmingTools = "I use a few different tools and languages. As for languages, I am confident in HTML, CSS, JavaScript, Java, and Markdown. I also know Swift. However, I am still learning Swift. As for tools, I am familiar with Vue.js for website development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these too.";
+    const programmingExperience = "I currently have no relevant work experience but hope to get an internship soon. I have however worked on some projects. I have recreated an existing website and I created this portfolio but this is actually the second version. View the original as well as my other projects in the project page.";
 
     function imageChange(imageIndex)
     {
