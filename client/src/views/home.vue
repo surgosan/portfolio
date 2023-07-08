@@ -6,6 +6,7 @@
   import { RouterLink } from 'vue-router';
   import Connection from '@/server/Connection';
   import { ref, onMounted } from 'vue';
+  import 'animate.css';
 
   const visitCounter = ref(0);
 

@@ -310,6 +310,7 @@
 <script setup> 
 
 import { RouterLink } from 'vue-router';
+import 'animate.css';
 
     const windowWidth = window.innerWidth;
     var initialMouseLocation = 0;

@@ -317,7 +317,7 @@
         aspect-ratio: 16/9;
         border-radius: 1rem;
         transition: .5s;
-        background: url('../assets/Photos/galleryTwo.JPG');
+        background: url('../assets/Photos/galleryTwo.jpg');
         background-size: cover;
         z-index: -1;
     }

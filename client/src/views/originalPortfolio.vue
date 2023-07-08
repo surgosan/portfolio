@@ -716,7 +716,6 @@ input[data-autocompleted] {
     0%  { color: rgb(65,105,225); }
 }
 #aboutPageBubble{
-    background-image: url();
     background-size: cover;
     animation: bubbleMover1 25s infinite ease-in-out ;
 }
@@ -866,7 +865,7 @@ input[data-autocompleted] {
 #educationBefore{
     left: 5%;
     top: 10%;
-    background: url(../assets/Photos/education.JPG);
+    background: url(../assets/Photos/books.JPG);
     background-size: cover;
     background-position: 30% 50%;
     animation: bubbleNotification 10s infinite linear -2s;
@@ -1130,7 +1129,7 @@ input[data-autocompleted] {
     background-position: 0 100%;
 }
 #galleryTwo{
-    background: url(../assets/Photos/galleryTwo.JPG);
+    background: url(../assets/Photos/galleryTwo.jpg);
     background-size: cover;
     background-position: 0 100%;
 }
