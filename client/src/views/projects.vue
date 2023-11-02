@@ -213,19 +213,20 @@
         gap: 4vmin;
         align-items: center;
         justify-content: center;
-        translate: -25% 0;
+        translate: -50% 0;
         transition: 0s;
     }
     #image-track > .track-item {
-        width: 46vmin;
-        height: 56vmin;
+        width: 80vmin;
+        aspect-ratio: 16/9;
         object-fit: cover;
         scale: 1;
         user-select: none;
         text-decoration: none;
         overflow: hidden;
         background-size: cover;
-        background-position: 50% 50%;
+        background-position: 0 0 ;
+        border-radius: 1rem;
     }
 
     .track-item:hover > .trackDescription {
@@ -238,8 +239,7 @@
       left: 0;
       width: 100%;
       height: fit-content;
-      padding: 3%;
-      padding-bottom: 5%;
+      padding: 0 0 1% 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -314,8 +314,8 @@ import 'animate.css';
 
     const windowWidth = window.innerWidth;
     var initialMouseLocation = 0;
-    var prevLocationPercentage = -25;
-    var currentPercentage = -25;
+    var prevLocationPercentage = -50;
+    var currentPercentage = 0;
     var newPercentage = 0;
     var displayPercentage = 0;
     var mousedown = false;
@@ -401,9 +401,9 @@ import 'animate.css';
         movedItems = true;
         var mouseDelta = (initialMouseLocation - locateMouse(e));
         const maxDelta = windowWidth/2;
-        currentPercentage = (mouseDelta/maxDelta)* -50;
+        currentPercentage = (mouseDelta/maxDelta) * -25; //adjust integer for sensitivity
         newPercentage = prevLocationPercentage + currentPercentage;
-        displayPercentage = Math.max(Math.min(newPercentage, 20), -70);
+        displayPercentage = Math.max(Math.min(newPercentage, 15), -90);
 
         document.getElementById("image-track").animate ({
           translate: displayPercentage + "% 0"
