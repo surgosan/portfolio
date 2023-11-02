@@ -300,7 +300,7 @@
         position: absolute;
         top: 10%;
         left: 5%;
-        width: 30rem;
+        width: 45%;
         aspect-ratio: 16/9;
         border-radius: 1rem;
         transition: .5s;
@@ -313,7 +313,7 @@
         position: absolute;
         bottom: 5%;
         right: 10%;
-        width: 30rem;
+        width: 45%;
         aspect-ratio: 16/9;
         border-radius: 1rem;
         transition: .5s;
@@ -392,12 +392,12 @@
 
     const topicText = ref('Select a topic to read about.');
     
-    const general = "My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend Dalton State College. I will attend Kennesaw State University this August. I enjoy programming, music, photography, and motorcycles.";
-    const hobbies = "I am a musician and perform on the weekends. I ride a motorcycle, so I like to take trips and off-roading. I also like photography and go out to take photos sometimes. I also really enjoy programming. I never get tired and sometimes just program for fun.";
-    const plans = "My future plans consist of graduating from Kennesaw State University, deepening my knowledge in programming and music, and also to travel to Japan.";
+    const general = "My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend Kennesaw State University. I enjoy programming, music, photography, and motorcycles.";
+    const hobbies = "I am a musician and perform on the weekends. I ride a an adventure motorcycle, so I like to take trips and off-roading. I also like photography and go out to take photos sometimes. I also really enjoy programming. I never get tired and sometimes just program for fun.";
+    const plans = "My future plans consist of graduating from Kennesaw State University with a Bachelor of Science in Computer Science, deepening my knowledge in programming and music, and also to travel to Japan.";
     const workEthic = "I am well organized and like to work hard and smart. I enjoy problem solving and am independent, but I am always willing to work with others as well.";
     const programmingTools = "I use a few different tools and languages. As for languages, I am confident in HTML, CSS, JavaScript, Java, and Markdown. I also know Swift. However, I am still learning Swift. As for tools, I am familiar with Vue.js for website development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these too.";
-    const programmingExperience = "I currently have no relevant work experience but hope to get an internship soon. I have however worked on some projects. I have recreated an existing website and I created this portfolio but this is actually the second version. View the original as well as my other projects in the project page.";
+    const programmingExperience = "I currently have no relevant work experience but hope to get an internship soon. I have however worked on some projects. I have recreated an existing website and I created this portfolio but this is actually the second version. I am the sole web developer of the KSU AUV team and created the website from scratch.";
 
     function imageChange(imageIndex)
     {
