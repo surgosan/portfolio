@@ -10,9 +10,8 @@ I am always looking for ways to update and enhance it.
 
 ## Current Future Plans
 - Optimise for smaller screens
-- Change project to be landscape
-- Update about page
 - Fix issue where site breaks if refreshed a page that is not home page
 - Bring about content closer? Change layout to boxed areas?
+- Update downloadable (resume, etc.)
 
 [1]: client/src/assets/Photos/portfolio_home.png
