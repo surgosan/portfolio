@@ -46,7 +46,7 @@
 
   <main>
 
-    <card id="cardOne" title="Download my Resume" file="Sergio Sanchez-Alvares.pdf" download/>
+    <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares" download/>
 
     <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 
@@ -54,7 +54,7 @@
     <a href="https://github.com/surgosan" target="_blank">GitHub: @surgosan</a>
     <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">Facebook: Sergio Sanchez</a>
     <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">Instagram: sergo.sanchez</a>
-    <p>Last Updated: 2023/07/08</p>
+    <p>Last Updated: 2023/11/24</p>
   </main>
 </template>
 
@@ -129,7 +129,7 @@
     aspect-ratio: 1;
     border: solid 2px var(--color-heading);
     border-radius: 100%;
-    background: url(../assets/Photos/Selfie.JPG);
+    background: url(../assets/Photos/main.JPG) center;
     background-size: cover;
   }
 

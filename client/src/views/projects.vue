@@ -21,16 +21,11 @@
         </div>
 
         <div id="image-track">
-            <div class="track-item" id="comingSoon" draggable="false">
-              <div class="trackDescription">
-                <p>Coming Soon</p>
-              </div>
+
+          <div class="track-item" id="comingSoon" draggable="false">
+            <div class="trackDescription">
             </div>
-            <div class="track-item" id="comingSoon" draggable="false">
-              <div class="trackDescription">
-                <p>Coming Soon</p>
-              </div>    
-            </div>
+          </div>
 
             <div class="track-item" id="swift" draggable="false">
               <div class="trackDescription">
@@ -81,6 +76,19 @@
                 <p>This is the old version of this portfolio. Feel free to compare the two versions.</p>
               </div>    
             </div>
+
+          <div class="track-item" id="ksu_auv" draggable="false">
+            <div class="trackDescription">
+              <div class="chips">
+                <div class="langChip">HTML</div>
+                <div class="langChip">CSS</div>
+                <div class="langChip">JavaScript</div>
+                <a class="langChip" href="https://ksu-auv-team.github.io/website.github.io/" target="_blank">Link</a>
+              </div>
+
+              <p>The Kennesaw State University AUV Team website serves as the front face for potential investors. I worked on the website alone and created it from scratch while advising the team, and official RoboSub regulations.</p>
+            </div>
+          </div>
 
             <div class="track-item" id="chessMaster" draggable="false">
               <div class="trackDescription">
@@ -296,6 +304,10 @@
 
     #oldPortfolo {
       background: url(../assets/Photos/portfolioV1.png)
+    }
+
+    #ksu_auv {
+      background: url("../assets/Photos/ksu_auv_home.png");
     }
 
     #chessMaster {
