@@ -2,7 +2,6 @@
   import prgLang from '../components/prgLang.vue';
   import hoverColoredText from '../components/hoverColoredText.vue';
   import card from '../components/card.vue';
-  import buttonRes from '../components/buttonRes.vue';
   import { RouterLink } from 'vue-router';
   import Connection from '@/server/Connection';
   import { ref, onMounted } from 'vue';
@@ -46,7 +45,7 @@
 
   <main>
 
-    <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares" download/>
+    <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares.pdf" download/>
 
     <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 

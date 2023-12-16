@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 main-database-connection-details.txt
 dbInstance.js
 server/dbInstance.js
