@@ -83,7 +83,7 @@
                 <div class="langChip">HTML</div>
                 <div class="langChip">CSS</div>
                 <div class="langChip">JavaScript</div>
-                <a class="langChip" href="https://ksu-auv-team.github.io/website.github.io/" target="_blank">Link</a>
+                <a class="langChip" href="https://ksu-auv-team.github.io/ksuauv.github.io/" target="_blank">Link</a>
               </div>
 
               <p>The Kennesaw State University AUV Team website serves as the front face for potential investors. I worked on the website alone and created it from scratch while advising the team, and official RoboSub regulations.</p>
