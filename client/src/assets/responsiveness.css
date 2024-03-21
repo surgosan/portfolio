@@ -1,0 +1,54 @@
+@media  screen and (max-width: 1100px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: .75rem;
+    }
+
+    /* HOME */
+    #home_main .container { width: 90% }
+
+    #myName { font-size: 2rem; }
+
+    .code-container { aspect-ratio: 6/1; }
+
+    /*  ABOUT */
+
+    #topicText { max-width: 95%; }
+
+    .tools {
+        padding-left: 1rem !important;
+        padding-right: 6rem !important;
+    }
+
+/*    SUGGESTIONS PAGE */
+
+    #newSuggestion {
+        width: 30%;
+        padding: 1rem;
+    }
+
+    #main_div {
+        width: 90%;
+        gap: 1rem;
+    }
+
+    .table td {
+        height: fit-content;
+    }
+
+    .display-table {
+        padding: 1rem !important;
+
+    }
+
+/*    PROJECT PAGE  */
+
+
+}

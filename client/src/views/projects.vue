@@ -182,7 +182,7 @@
     .cursor-demonstration {
       width: 15rem;
       position: absolute;
-      top: 45%;
+      top: 60%;
       right: 10%;
     }
 
@@ -307,7 +307,7 @@
     }
 
     #ksu_auv {
-      background: url("../assets/Photos/ksu_auv_home.png");
+      background: url(../assets/Photos/ksu_auv_home.png);
     }
 
     #chessMaster {

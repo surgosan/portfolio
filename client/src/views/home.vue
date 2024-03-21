@@ -25,7 +25,7 @@
 <template>
   <header>
     <span id="profile"></span>
-    <h1>Sergio Sanchez-Alvares</h1>
+    <h1 id="myName">Sergio Sanchez-Alvares</h1>
     <h2><hoverColoredText innerText="Student"/> | <hoverColoredText innerText="Musician"/> | <hoverColoredText innerText="Programmer"/></h2>
     <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
     <hr>
@@ -43,7 +43,7 @@
     <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times since 2023/06/26.</p>
   </header>
 
-  <main>
+  <main id="home_main">
 
     <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares.pdf" download/>
 
@@ -87,7 +87,7 @@
 
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   h1:hover {

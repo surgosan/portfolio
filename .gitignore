@@ -5,6 +5,7 @@ dbInstance.js
 server/dbInstance.js
 server/planetscale_db_details
 planetscale_db_details
+db_migration
 todo.txt
 
 
@@ -26,3 +27,4 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+/db_migration/
