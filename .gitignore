@@ -1,10 +1,8 @@
 .DS_Store
 node_modules
-main-database-connection-details.txt
 dbInstance.js
 server/dbInstance.js
-server/planetscale_db_details
-planetscale_db_details
+server/database_details.txt
 db_migration
 todo.txt
 

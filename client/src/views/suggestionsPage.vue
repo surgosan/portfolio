@@ -2,8 +2,8 @@
     <main>
         <h1 class="section-title">Suggestions</h1>
         <RouterLink to="/" class="link">Return</RouterLink>
-        <div class="hBox">
-            <div class="newSuggestion">
+        <div class="hBox" id="main_div">
+            <div class="newSuggestion" id="newSuggestion">
                 <h2 class="section-title">Make a new suggestion!</h2>
                 <p>*Inappropriate suggestions will be deleted*</p>
                 <label for="fName">First Name</label>

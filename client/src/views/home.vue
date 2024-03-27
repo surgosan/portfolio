@@ -18,6 +18,11 @@
       visitCounter.value = -1;
     }
   }
+
+  function copyEmail() {
+    navigator.clipboard.writeText("surgosan@gmail.com");
+  }
+
   onMounted(getVisitCount);
   //onMounted(newVisit);
 </script>
@@ -49,10 +54,22 @@
 
     <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 
-    <h2>Email: surgosan@gmail.com</h2>
-    <a href="https://github.com/surgosan" target="_blank">GitHub: @surgosan</a>
-    <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">Facebook: Sergio Sanchez</a>
-    <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">Instagram: sergo.sanchez</a>
+    <h2 id="email_text" @click="copyEmail">Email: surgosan@gmail.com</h2>
+
+    <div id="home_socials">
+      <a href="https://github.com/surgosan" target="_blank">
+        <img src="@/assets/github_white_svg.svg" alt="Github">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">
+        <img src="@/assets/facebook_svg.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">
+        <img src="@/assets/instagram_svg.svg" alt="Instagram">
+      </a>
+      <a href="https://www.linkedin.com/in/sergio-sanchez-alvares-36a97614a/" target="_blank">
+        <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
+      </a>
+    </div>
     <p>Last Updated: 2023/11/24</p>
   </main>
 </template>
@@ -133,14 +150,27 @@
   }
 
   #cardOne {
-    background: url(../assets/Photos/dscTower.JPG);
+    background: url(../assets/Photos/dscTower.JPG) 0 40%;
     background-size: cover;
-    background-position: 0 40%;
   }
 
   #cardTwo {
-    background: url(../assets/Photos/mountainView.JPG);
+    background: url(../assets/Photos/mountainView.JPG) 0 50%;
     background-size: cover;
-    background-position: 0 40%;
   }
+
+  #email_text { cursor: pointer; }
+
+  #home_socials {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #home_socials img { transition: 400ms }
+
+  #home_socials img:hover {
+    scale: 1.1;
+  }
+
 </style>
