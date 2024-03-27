@@ -70,8 +70,8 @@
         <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
       </a>
     </div>
-    <p>Last Updated: 2023/11/24</p>
-  </main>
+    <p>Last Updated: 2023/03/27</p>
+  </main>11
 </template>
 
 <style scoped>
