@@ -4,11 +4,11 @@ const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
 const database = new Sequelize('portfolio', username, password, {
-    host: 'aws.connect.psdb.cloud',
+    host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
     dialect:'mysql',
     dialectOptions: {
         ssl: {
-            rejectUnauthorized: true,        
+            rejectUnauthorized: false,
         }
     }
   });
