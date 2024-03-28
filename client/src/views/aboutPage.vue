@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main id="about_main">
         <RouterLink to="/" class="link">Return</RouterLink>
         <div class="content">
             <div class="hBox">
@@ -142,6 +142,8 @@
         height: 100dvh;
         display: flex;
         flex-direction: column;
+        position: relative;
+        max-width: 100%;
     }
 
     svg {

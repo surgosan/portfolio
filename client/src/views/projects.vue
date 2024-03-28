@@ -1,6 +1,11 @@
 
 <template>
-    <div class="main">
+    <div class="not_available_on_phone">
+      <h1>Sorry, this page is not available on smaller devices.</h1>
+      <RouterLink to="/" class="link" @click="reset()">Return</RouterLink>
+    </div>
+
+    <div class="main" id="projects_main">
         <div class="head">
           <div class="return">
             <RouterLink to="/" class="link" @click="reset()">Return</RouterLink>
@@ -131,6 +136,15 @@
 
 
 <style scoped>
+
+    .not_available_on_phone {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 1rem;
+      text-align: center;
+    }
 
     h1 {
       color: var(--color-heading);

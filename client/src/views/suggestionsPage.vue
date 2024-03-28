@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main id="suggestions_main">
         <h1 class="section-title">Suggestions</h1>
         <RouterLink to="/" class="link">Return</RouterLink>
         <div class="hBox" id="main_div">

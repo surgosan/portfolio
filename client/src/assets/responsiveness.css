@@ -52,3 +52,132 @@
 
 
 }
+
+@media screen and (max-width: 600px) {
+/*----------------------------------------------------GLOBAL----------------------------------------------------*/
+    .contact-service {
+        width: 50px;
+        right: .25rem;
+        bottom: .25rem;
+    }
+    .contact-service svg {
+        width: 35px;
+        height: 40px;
+    }
+
+/*-------------------------------------------------HOME VIEW-------------------------------------------------*/
+    #home_main_main {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    #home_main_main header, #home_main_main main {
+        width: 95%;
+    }
+    .code-container {
+        aspect-ratio: 5/1;
+        width: 95%;
+    }
+    #profile {
+        width: 30% !important;
+    }
+    #home_main_main .container {
+        width: 100%;
+        aspect-ratio: 16/7;
+    }
+
+    #home_main_main #home_socials {
+        width: 75%;
+    }
+/*------------------------------------------------ABOUT VIEW------------------------------------------------*/
+    #about_main .link {
+        position: absolute;
+        width: fit-content;
+        padding: 4px .5rem;
+        z-index: +5;
+    }
+    #about_main .hBox {
+        flex-direction: column;
+        height: 100%;
+    }
+    #about_main .selection {
+        height: fit-content;
+        border: unset;
+        padding: 1rem 0 0;
+    }
+    #about_main .topics {
+        flex-direction: row;
+        width: 95%;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+    #about_main .view {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    #topicText {
+        width: 95vw;
+        max-width: unset;
+    }
+    .imageSpan {
+        left: 15% !important;
+    }
+    .imageSpan2 {
+        right: 15% !important;
+    }
+    #about_tools {
+        padding: 1rem .5rem 8rem .5rem !important;
+        flex-grow: unset;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    #about_tools .toolTip {
+        height: fit-content;
+        margin-bottom: 1rem;
+    }
+    .toolTipText {
+        top: -2rem !important;
+    }
+    .toolTip svg {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+
+/*--------------------------------------------- PROJECT VIEW ---------------------------------------------*/
+    #projects_main {
+        display: none;
+    }
+    .not_available_on_phone {
+        display: flex !important;
+    }
+
+/*---------------------------------------- SUGGESTIONS VIEW ----------------------------------------*/
+    #suggestions_main {
+        gap: 1rem;
+    }
+    #suggestions_main .link {
+        width: fit-content;
+        padding: 5px 1rem;
+    }
+    #main_div {
+        flex-direction: column;
+        width: 95%;
+        padding: 0 0 1rem;
+    }
+
+    #newSuggestion {
+        width: 100%;
+    }
+    .display-table {
+        width: 100%;
+    }
+    .display-table .search {
+        padding: 0;
+        gap: 2px;
+    }
+
+    td {
+        padding: 0;
+        min-width: unset;
+    }
+}

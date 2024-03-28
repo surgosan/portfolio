@@ -28,53 +28,64 @@
 </script>
 
 <template>
-  <header>
-    <span id="profile"></span>
-    <h1 id="myName">Sergio Sanchez-Alvares</h1>
-    <h2><hoverColoredText innerText="Student"/> | <hoverColoredText innerText="Musician"/> | <hoverColoredText innerText="Programmer"/></h2>
-    <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
-    <hr>
-    <h2><hoverColoredText innerText='Full Stack Developer'/></h2>
+  <div id="home_main_main">
+    <header>
+      <span id="profile"></span>
+      <h1 id="myName">Sergio Sanchez-Alvares</h1>
+      <h2><hoverColoredText innerText="Student"/> | <hoverColoredText innerText="Musician"/> | <hoverColoredText innerText="Programmer"/></h2>
+      <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
+      <hr>
+      <h2><hoverColoredText innerText='Full Stack Developer'/></h2>
 
-    <div class="linkContainer">
-      <RouterLink class="link" to="/about">About</RouterLink>
-      <RouterLink class="link" to="/suggestions">Suggestions</RouterLink>
-      <RouterLink class="link" to="/projects">Projects</RouterLink>
-    </div>
+      <div class="linkContainer">
+        <RouterLink class="link" to="/about">About</RouterLink>
+        <RouterLink class="link" to="/suggestions">Suggestions</RouterLink>
+        <RouterLink class="link" to="/projects">Projects</RouterLink>
+      </div>
 
-    <p>This site was created using <span id='colored'>Vue.js</span> and <span id='colored'>MYSQL</span>
-      <br>The <span id="colored">color scheme</span> changes depending if your brower is in dark/light mode
-    </p>
-    <p>This page has been visited <span id="colored">{{ visitCounter }}</span> times since 2023/06/26.</p>
-  </header>
+      <p>This site was created using <span class='colored'>Vue.js</span> and <span class='colored'>MYSQL</span>
+        <br>The <span class="colored">color scheme</span> changes depending if your brower is in dark/light mode
+      </p>
+      <p>This page has been visited <span class="colored">{{ visitCounter }}</span> times since 2023/06/26.</p>
+    </header>
 
-  <main id="home_main">
+    <main id="home_main">
 
-    <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares.pdf" download/>
+      <card id="cardOne" title="Download my Resume" file="Resume_Sergio_Sanchez-Alvares.pdf" download/>
 
-    <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
+      <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 
-    <h2 id="email_text" @click="copyEmail">Email: surgosan@gmail.com</h2>
+      <h2 id="email_text" @click="copyEmail">Email: surgosan@gmail.com</h2>
 
-    <div id="home_socials">
-      <a href="https://github.com/surgosan" target="_blank">
-        <img src="@/assets/github_white_svg.svg" alt="Github">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">
-        <img src="@/assets/facebook_svg.svg" alt="Facebook">
-      </a>
-      <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">
-        <img src="@/assets/instagram_svg.svg" alt="Instagram">
-      </a>
-      <a href="https://www.linkedin.com/in/sergio-sanchez-alvares-36a97614a/" target="_blank">
-        <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
-      </a>
-    </div>
-    <p>Last Updated: 2023/03/27</p>
-  </main>11
+      <div id="home_socials">
+        <a href="https://github.com/surgosan" target="_blank">
+          <img src="@/assets/github_white_svg.svg" alt="Github">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100007142827416" target="_blank">
+          <img src="@/assets/facebook_svg.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/sergo.sanchez/" target="_blank">
+          <img src="@/assets/instagram_svg.svg" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/sergio-sanchez-alvares-36a97614a/" target="_blank">
+          <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
+        </a>
+      </div>
+      <p>Last Updated: 2023/03/28</p>
+    </main>
+  </div>
+
 </template>
 
 <style scoped>
+
+  #home_main_main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: fit-content;
+    max-height: fit-content;
+  }
 
   header, main {
     position: relative;
@@ -136,8 +147,9 @@
       background-color: var(--color-background-soft);
     }
 
-    #colored {
+    .colored {
       color: var(--color-theme);
+      text-shadow: 1px 1px var(--color-background-mute);
     }
 
   #profile {
