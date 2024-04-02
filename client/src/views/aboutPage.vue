@@ -399,7 +399,7 @@
     const plans = "My future plans consist of graduating from Kennesaw State University with a Bachelor of Science in Computer Science, deepening my knowledge in programming and music, and also to travel to Japan.";
     const workEthic = "I am well organized and like to work hard and smart. I enjoy problem solving and am independent, but I am always willing to work with others as well.";
     const programmingTools = "I use a few different tools and languages. As for languages, I am confident in HTML, CSS, JavaScript, Java, and Markdown. I also know Swift. However, I am still learning Swift. As for tools, I am familiar with Vue.js for website development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these too.";
-    const programmingExperience = "I currently have no relevant work experience but hope to get an internship soon. I have however worked on some projects. I have recreated an existing website and I created this portfolio but this is actually the second version. I am the sole web developer of the KSU AUV team and created the website from scratch.";
+    const programmingExperience = "I have a few different projects that I have worked on alone and with others to further my skill set. I have recreated an existing website and I created this portfolio but this is actually the second version. I am the sole web developer of the KSU AUV team and created the website from scratch. I have learned how to work on both front end and back end development with UX/UI, servers, and databases.";
 
     function imageChange(imageIndex)
     {
