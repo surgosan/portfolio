@@ -15,16 +15,6 @@ app.use(function(req, res, next) {
     next();
   });
 
-
-// database.sync()
-//   .then(() => {
-//       console.log("Synced");
-//
-//       app.listen(port, () => {
-//           console.log(`Server is running on port ${port}`)
-//       })
-//   })
-
 async function startServer() {
     try {
         await Promise.all([
