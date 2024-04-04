@@ -1,4 +1,3 @@
-const Sequelize = require('sequelize');
 const { portfolioDB, ksuAUVDB } = require('./dbInstance');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -29,8 +28,8 @@ app.use(function(req, res, next) {
 async function startServer() {
     try {
         await Promise.all([
-            portfolioDB.sync(),
-            ksuAUVDB.sync()
+            portfolioDB.authenticate(),
+            ksuAUVDB.authenticate()
         ]);
 
         app.listen(port, () => {

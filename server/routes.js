@@ -3,7 +3,6 @@ const suggestionController = require('./controllers/suggestionController');
 const critismController = require('./controllers/critismController');
 const visitorController = require('./controllers/visitorCountController');
 
-const auv_models = require('./ksu_auv_control/ksu_auv_controllers');
 const {batteryController, motorController, servoController, logController} = require("./ksu_auv_control/ksu_auv_controllers");
 
 module.exports = (app) => {
@@ -29,10 +28,18 @@ module.exports = (app) => {
 // 	KSU AUV
 	app.post('/auv/battery/new', batteryController.inputData);
 	app.post('/auv/battery/bulk', batteryController.inputBulk);
+	app.post('/auv/battery/getBetweenSessions', batteryController.getAllBetween);
+
 	app.post('/auv/motor/new', motorController.inputData);
 	app.post('/auv/motor/bulk', motorController.inputBulk);
+	app.post('/auv/motor/getBetweenSessions', motorController.getAllBetween);
+
 	app.post('/auv//servo/new', servoController.inputData);
 	app.post('/auv//servo/bulk', servoController.inputBulk);
+	app.post('/auv/servo/getBetweenSessions', servoController.getAllBetween);
+
 	app.post('/auv/log/new', logController.inputData);
 	app.post('/auv/log/bulk', logController.inputBulk);
+	app.post('/auv/log/getSessions', logController.getSessionMarkers);
+	app.post('/auv/log/getBetweenSessions', logController.getAllBetween);
 }
