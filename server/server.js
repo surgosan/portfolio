@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const database = require('./dbInstance');
+const { portfolioDB, ksuAUVDB } = require('./dbInstance');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -17,11 +17,30 @@ app.use(function(req, res, next) {
   });
 
 
-database.sync()
-  .then(() => {
-      console.log("Synced");
-  
-      app.listen(port, () => {
-          console.log(`Server is running on port ${port}`)
-      })
-  })
+// database.sync()
+//   .then(() => {
+//       console.log("Synced");
+//
+//       app.listen(port, () => {
+//           console.log(`Server is running on port ${port}`)
+//       })
+//   })
+
+async function startServer() {
+    try {
+        await Promise.all([
+            portfolioDB.sync(),
+            ksuAUVDB.sync()
+        ]);
+
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    } catch (error) {
+        console.error('Unable to connect to databases:', error);
+    }
+}
+
+startServer().then(() => {
+    console.log('Connection to databases has been established successfully.');
+});

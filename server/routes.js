@@ -3,6 +3,9 @@ const suggestionController = require('./controllers/suggestionController');
 const critismController = require('./controllers/critismController');
 const visitorController = require('./controllers/visitorCountController');
 
+const auv_models = require('./ksu_auv_control/ksu_auv_controllers');
+const {batteryController, motorController, servoController, logController} = require("./ksu_auv_control/ksu_auv_controllers");
+
 module.exports = (app) => {
 	app.post('/message/new', messageController.newMessage);
 	app.post('/message/getByName', messageController.getByName);
@@ -21,4 +24,15 @@ module.exports = (app) => {
 	app.get('/visit/getAll', visitorController.getAllVisits);
 	app.get('/visit/getRecent', visitorController.getRecentVisits);
 	app.delete('/visit/deleteRecent', visitorController.deleteMostRecentVisit);
+
+
+// 	KSU AUV
+	app.post('/auv/battery/new', batteryController.inputData);
+	app.post('/auv/battery/bulk', batteryController.inputBulk);
+	app.post('/auv/motor/new', motorController.inputData);
+	app.post('/auv/motor/bulk', motorController.inputBulk);
+	app.post('/auv//servo/new', servoController.inputData);
+	app.post('/auv//servo/bulk', servoController.inputBulk);
+	app.post('/auv/log/new', logController.inputData);
+	app.post('/auv/log/bulk', logController.inputBulk);
 }

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const database = require('../../dbInstance');
+const { ksuAUVDB } = require('../../dbInstance');
 
-const motorData = database.define('motorData',
+const motorData = ksuAUVDB.define('motorData',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -31,3 +31,5 @@ const motorData = database.define('motorData',
         modelName: "motorData"
     }
 );
+
+module.exports = motorData;

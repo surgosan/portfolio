@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const database = require('../../dbInstance');
+const { ksuAUVDB } = require('../../dbInstance');
 
-const batteryData = database.define('batteryData',
+const batteryData = ksuAUVDB.define('batteryData',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -36,3 +36,5 @@ const batteryData = database.define('batteryData',
         modelName: "batteryData"
     }
 );
+
+module.exports = batteryData;

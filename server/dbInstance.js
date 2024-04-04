@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-const database = new Sequelize('portfolio', username, password, {
+const portfolioDB = new Sequelize('portfolio', username, password, {
     host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
     dialect:'mysql',
     dialectOptions: {
@@ -11,18 +11,46 @@ const database = new Sequelize('portfolio', username, password, {
             rejectUnauthorized: false,
         }
     }
-  });
+});
 
-async function init()
+const ksuAUVDB = new Sequelize('ksu_auv_control', username, password, {
+    host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
+    dialect:'mysql',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false,
+        }
+    }
+})
+
+async function initPortfolio()
 {
     try {
-        await database.authenticate();
+        await portfolioDB.authenticate();
         console.log('Connection has been established successfully.');        
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
 }
 
-init(); //test if we have a connection
+async function initAUV() {
+    try {
+        await ksuAUVDB.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
 
-module.exports = database;
+async function init() {
+    await Promise.all([initPortfolio(), initAUV()]);
+}
+
+init().then(() => {
+    console.log("DB and Schemas Connected")
+});
+
+module.exports = {
+    portfolioDB,
+    ksuAUVDB
+};

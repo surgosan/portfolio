@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const database = require('../dbInstance');
+const { portfolioDB } = require('../dbInstance');
 
-const Message = database.define('Message',
+const Message = portfolioDB.define('Message',
     {
         id: {
             type: DataTypes.INTEGER,

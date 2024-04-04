@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const database = require('../../dbInstance');
+const { ksuAUVDB } = require('../../dbInstance');
 
-const servoData = database.define('servoData',
+const servoData = ksuAUVDB.define('servoData',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -31,3 +31,5 @@ const servoData = database.define('servoData',
         modelName: "servoData"
     }
 );
+
+module.exports = servoData;

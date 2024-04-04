@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const database = require('../../dbInstance');
+const { ksuAUVDB } = require('../../dbInstance');
 
-const log = database.define('Log',
+const log = ksuAUVDB.define('Log',
     {
         id: {
             type: DataTypes.INTEGER,
@@ -18,6 +18,12 @@ const log = database.define('Log',
         message: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+
+        sessionMarker: { //Used to select sessions to load
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            default: false
         }
     },
 
@@ -26,3 +32,5 @@ const log = database.define('Log',
         modelName: "Log"
     }
 );
+
+module.exports = log;
