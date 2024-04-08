@@ -4,12 +4,14 @@ const batteryData = require('./batteryData');
 const motorData = require('./motorData');
 const servoData = require('./servoData');
 const log = require('./log');
+const power = require('./power');
 
 const auv_models = {
     batteryData,
     motorData,
     servoData,
-    log
+    log,
+    power
 };
 
 auv_models.sequelize = Sequelize;

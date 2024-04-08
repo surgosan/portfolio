@@ -3,7 +3,7 @@ const suggestionController = require('./controllers/suggestionController');
 const critismController = require('./controllers/critismController');
 const visitorController = require('./controllers/visitorCountController');
 
-const {batteryController, motorController, servoController, logController} = require("./ksu_auv_control/ksu_auv_controllers");
+const {batteryController, motorController, servoController, logController, powerController} = require("./ksu_auv_control/ksu_auv_controllers");
 
 module.exports = (app) => {
 	app.post('/message/new', messageController.newMessage);
@@ -42,4 +42,7 @@ module.exports = (app) => {
 	app.post('/auv/log/bulk', logController.inputBulk);
 	app.post('/auv/log/getSessions', logController.getSessionMarkers);
 	app.post('/auv/log/getBetweenSessions', logController.getAllBetween);
+
+	app.get('/auv/power/fetch', powerController.fetchPower);
+	app.post('/auv/power/toggle', powerController.togglePower);
 }
