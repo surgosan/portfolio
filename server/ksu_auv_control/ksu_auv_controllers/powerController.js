@@ -30,5 +30,19 @@ module.exports = {
                 error: errorResponse.message,
             });
         }
+    },
+
+    async newPower(req, res) {
+        try {
+            const newPower = await power.create(req.body);
+            res.send(`New power source with ID: ${newPower.id}`);
+        } catch (error) {
+            const errorMessage = error.message || 'An error occurred';
+            const errorResponse = httpErrors.internalServerError(errorMessage);
+
+            res.status(errorResponse.status).send({
+                error: errorResponse.message,
+            });
+        }
     }
 }

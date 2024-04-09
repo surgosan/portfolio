@@ -45,4 +45,5 @@ module.exports = (app) => {
 
 	app.get('/auv/power/fetch', powerController.fetchPower);
 	app.post('/auv/power/toggle', powerController.togglePower);
+	app.post('/auc/power/new', powerController.newPower);
 }
