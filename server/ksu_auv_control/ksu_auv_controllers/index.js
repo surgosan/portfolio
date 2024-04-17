@@ -4,6 +4,7 @@ const servoController = require('./servoController');
 const logController = require('./logController');
 const powerController = require('./powerController');
 
+// Access controllers from auv controllers index
 module.exports = {
     batteryController,
     motorController,
