@@ -82,5 +82,29 @@ module.exports = {
                 error: errorResponse.message,
             });
         }
+    },
+
+    async checkActiveSession(req, res) {
+        try {
+            const activeSession = await log.findOne({
+                where: {
+                    sessionMarker: true
+                },
+                order: [['id', 'DESC']]
+            });
+
+            if(activeSession && activeSession.sessionStart) {
+                return activeSession;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            const errorMessage = error.message || 'An error occurred';
+            const errorResponse = httpErrors.internalServerError(errorMessage);
+
+            res.status(errorResponse.status).send({
+                error: errorResponse.message,
+            });
+        }
     }
 }

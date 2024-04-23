@@ -24,6 +24,12 @@ const log = ksuAUVDB.define('Log',
             type: DataTypes.BOOLEAN,
             allowNull: false,
             default: false
+        },
+
+        sessionStart: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
 
