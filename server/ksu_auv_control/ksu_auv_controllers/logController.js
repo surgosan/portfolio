@@ -93,10 +93,10 @@ module.exports = {
                 order: [['id', 'DESC']]
             });
 
-            if(activeSession && activeSession.sessionStart) {
-                return activeSession;
+            if(activeSession && activeSession.sessionStart === true) {
+                res.send(activeSession);
             } else {
-                return null;
+                res.send(false);
             }
         } catch (error) {
             const errorMessage = error.message || 'An error occurred';

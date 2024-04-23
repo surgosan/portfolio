@@ -42,7 +42,7 @@ module.exports = (app) => {
 	app.post('/auv/servo/getBetweenSessions', servoController.getAllBetween);
 
 	// Logs
-	app.get('auv/log/checkSession', logController.checkActiveSession)
+	app.get('/auv/log/checkSession', logController.checkActiveSession)
 	app.post('/auv/log/new', logController.inputData);
 	app.post('/auv/log/bulk', logController.inputBulk);
 	app.post('/auv/log/getSessions', logController.getSessionMarkers);
