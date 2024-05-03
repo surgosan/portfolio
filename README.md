@@ -14,5 +14,9 @@ I am always looking for ways to update and enhance it.
 - Bring about content closer? Change layout to boxed areas?
 - Update downloadable (resume, etc.)
 - Playground area to play with data in a database using logic
+- Redesign projects page to be more interactive
+  - Remove slide
+  - Create multiple imgs & videos
+- Adjust backend to route all urls to index.html
 
 [1]: client/src/assets/Photos/portfolio_home.png
