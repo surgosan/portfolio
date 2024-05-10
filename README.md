@@ -17,6 +17,9 @@ I am always looking for ways to update and enhance it.
 - Redesign projects page to be more interactive
   - Remove slide
   - Create multiple imgs & videos
+  - Have icons to highlight skill involved.
+  - Allow user to expand the item
+  - Remove any need to visit external links or download items
 - Adjust backend to route all urls to index.html
 
 [1]: client/src/assets/Photos/portfolio_home.png
