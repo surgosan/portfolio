@@ -18,6 +18,7 @@ I am always looking for ways to update and enhance it.
   - Remove slide
   - Create multiple imgs & videos
   - Have icons to highlight skill involved.
+    - Skills involved may be color coded
   - Allow user to expand the item
   - Remove any need to visit external links or download items
 - Adjust backend to route all urls to index.html
