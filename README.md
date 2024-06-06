@@ -22,5 +22,6 @@ I am always looking for ways to update and enhance it.
   - Allow user to expand the item
   - Remove any need to visit external links or download items
 - Adjust backend to route all urls to index.html
+- Create personal blog where I can update my activites
 
 [1]: client/src/assets/Photos/portfolio_home.png
