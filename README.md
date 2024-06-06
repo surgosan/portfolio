@@ -23,5 +23,6 @@ I am always looking for ways to update and enhance it.
   - Remove any need to visit external links or download items
 - Adjust backend to route all urls to index.html
 - Create personal blog where I can update my activites
+- Create more Swift previews to display as a video in Projects
 
 [1]: client/src/assets/Photos/portfolio_home.png
