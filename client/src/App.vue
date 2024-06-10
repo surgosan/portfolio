@@ -64,7 +64,7 @@ const newVisit = async () => {
   }
 };
 
- // onMounted(newVisit);
+ onMounted(newVisit);
 
 const createNotification = (message) => {
   const notification = {
