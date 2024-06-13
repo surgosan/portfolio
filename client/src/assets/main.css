@@ -17,7 +17,7 @@
 #app::before {
   position: absolute;
   bottom: 5%;
-  right: 0%;
+  right: 0;
   content: "";
   width: 60%;
   height: 50%;
