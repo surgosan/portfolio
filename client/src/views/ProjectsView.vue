@@ -21,13 +21,15 @@ const projects = [
     imageID: "beSpoked",
     tags: ["HTML", "CSS", "JavaScript", "Vue.JS", "MySQL"],
     description: "This full stack application allows for the creation, retrieval and updating of information on a database. " +
-        "It also displays data on a table for ease of use"
+        "It also displays data on a table for ease of use",
+    markdown: "https://raw.githubusercontent.com/surgosan/BeSpoked-Bikes-Commision-Tracker/main/README.md"
   },
   {
     title: "Original Portfolio Mobile App",
     imageID: "swift",
     tags: ["Swift"],
-    description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift."
+    description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift.",
+    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/oldPortfolioIOS.md"
   },
   {
     title: "Original Portfolio",
@@ -56,33 +58,43 @@ const projects = [
     tags: ["Java", "JavaFX"],
     description: "For our Intro to Software Engineering class, our small team created a desktop application to manage a chess tournament. " +
         "I handled about 90% of the backend for this project. This included the databases and handling of data.",
-    link: "https://github.com/konkgg/SoftwareEngProject"
   }
 ]
 
 //------------------------------------------------------ DIALOG CONTROLS ------------------------------------------------------
-const expandProject = ref(true);
+const expandProject = ref(false);
 const projectContent = ref("");
 const closeDialog = () => {
   expandProject.value = false;
   projectContent.value = "";
 }
 const openDialog = async(markdownPath) => {
-  try {
-    const response = await fetch(markdownPath);
-    const markdown = await response.text();
-    const baseUrl = markdownPath.replace(/\/[^\/]*$/, '/'); // Get base URL
-    const adjustedMarkdown = adjustImagePaths(markdown, baseUrl);
-    projectContent.value = marked(adjustedMarkdown);
-    expandProject.value = true;
-  } catch(error) {
-    console.error('Error loading markdown file: ', error);
-    closeDialog();
+  if(markdownPath) {
+    try {
+      const response = await fetch(markdownPath);
+      const markdown = await response.text();
+      const baseUrl = markdownPath.replace(/\/[^\/]*$/, '/'); // Get base URL
+      const adjustedMarkdown = adjustImagePaths(markdown, baseUrl);
+      projectContent.value = marked(adjustedMarkdown);
+      expandProject.value = true;
+    } catch(error) {
+      console.error('Error loading markdown file: ', error);
+      closeDialog();
 
-    // Create notification to notify user that site could not load project.
+      // Create notification to notify user that site could not load project.
+      const notification = {
+        id: new Date().getTime(), // Unique identifier for the notification
+        message: "Could not retrieve project details.",
+      };
+      store.commit('addNotification', notification);
+      setTimeout(() => {
+        store.commit('removeOldestNotification');
+      }, 10000)
+    }
+  } else {
     const notification = {
       id: new Date().getTime(), // Unique identifier for the notification
-      message: "Could not retrieve project details.",
+      message: "This project does not have a detailed overview.",
     };
     store.commit('addNotification', notification);
     setTimeout(() => {

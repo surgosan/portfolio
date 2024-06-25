@@ -71,7 +71,7 @@
           <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
         </a>
       </div>
-      <p>Last Updated: 2023/04/25</p>
+      <p>Last Updated: 2024/06/24</p>
     </main>
   </div>
 
