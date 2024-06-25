@@ -21,6 +21,9 @@ const props = defineProps({
   },
   linkTarget: {
     type: String,
+  },
+  routerLink: {
+    type: String
   }
 });
 
@@ -42,6 +45,10 @@ const emit = defineEmits(['openProject']);
         <a v-if="link" class="projectLink" :href="link" target="_blank">
           <img src="@/assets/link.svg" alt="Link"/>
         </a>
+
+        <router-link v-if="routerLink" :to="routerLink" class="projectLink">
+          <img src="@/assets/link.svg" alt="Link"/>
+        </router-link>
       </div>
 
 <!------------------------- DESCRIPTION ------------------------->

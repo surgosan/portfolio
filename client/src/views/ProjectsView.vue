@@ -28,22 +28,24 @@ const projects = [
     title: "Original Portfolio Mobile App",
     imageID: "swift",
     tags: ["Swift"],
-    description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift.",
-    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/oldPortfolioIOS.md"
+    description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift and XCode.",
+    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/oldPortfolio/oldPortfolioIOS.md"
   },
   {
     title: "Original Portfolio",
     imageID: "oldPortfolio",
     tags: ["HTML", "CSS", "JavaScript"],
     description: "This is the original version of this portfolio. This is one of the projects I used to familiarize myself with " +
-        "web development.",
+        "web development. Note that this project is not stable anymore, but available to view.",
+    routerLink: "/original-portfolio"
   },
   {
     title: "Bunk-a-Biker Website Demo",
     imageID: "bunk-a-biker",
     tags: ["HTML", "CSS", "JavaScript", "Google APIs"],
     description: "I created a modern version of the Bunk-A-Biker website that helped me learn how to utilize and implement apis. " +
-        "I experimented with different designs and maps in order to best display pins and locations."
+        "I experimented with different designs and maps in order to best display pins and locations.",
+    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/bunkabiker/bunkabiker.md"
   },
   {
     title: "Application Hub",
@@ -51,6 +53,7 @@ const projects = [
     tags: ["Java", "JavaFX"],
     description: "I created a simple desktop application for minor tasks. These include tasks that would require using a calculator, " +
         "but I have the desktop application do it all for me.",
+    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/ApplicationHub/ApplicationHub.md"
   },
   {
     title: "Chess Master SWE Team Project",
@@ -58,6 +61,7 @@ const projects = [
     tags: ["Java", "JavaFX"],
     description: "For our Intro to Software Engineering class, our small team created a desktop application to manage a chess tournament. " +
         "I handled about 90% of the backend for this project. This included the databases and handling of data.",
+    markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/chessMaster/chessMaster.md"
   }
 ]
 
@@ -144,6 +148,7 @@ const adjustImagePaths = (markdown, baseUrl) => {
           :imageID ="project.imageID"
           :tags="project.tags"
           :link="project.link"
+          :router-link="project.routerLink"
           @openProject = "openDialog(project.markdown)"
       />
     </main>
