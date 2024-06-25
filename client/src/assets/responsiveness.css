@@ -1,3 +1,10 @@
+@media  screen and (max-width: 1800px) {
+/*    Projects Page*/
+    .projectCard {
+        width: calc(50% - 1rem) !important;
+    }
+}
+
 @media  screen and (max-width: 1100px) {
     h1 {
         font-size: 1.2rem;
@@ -51,6 +58,17 @@
 /*    PROJECT PAGE  */
 
 
+}
+
+@media screen and (max-width: 1000px) {
+/*    PROJECT PAGE */
+    .projectCard {
+        width: calc(95% - 1rem) !important;
+    }
+
+    #project_dialog {
+        width: 80% !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -144,11 +162,8 @@
     }
 
 /*--------------------------------------------- PROJECT VIEW ---------------------------------------------*/
-    #projects_main {
-        display: none;
-    }
-    .not_available_on_phone {
-        display: flex !important;
+    #project_dialog {
+        width: 85% !important;
     }
 
 /*---------------------------------------- SUGGESTIONS VIEW ----------------------------------------*/

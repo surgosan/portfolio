@@ -75,7 +75,7 @@ h1, p, a, div {
 }
 
 .projectCard:hover > .projectHeader {
-  height: 33%;
+  height: 50%;
 }
 
 .projectCard:hover > .projectHeader > .projectDescription {
