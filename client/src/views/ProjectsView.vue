@@ -104,7 +104,6 @@ const adjustImagePaths = (markdown, baseUrl) => {
 
     const [, imagePath] = imageDefinitionMatch.find(m => m.startsWith(`[${ref}]:`)).split(/\s+/);
     const newSrc = new URL(imagePath, baseUrl).href;
-    console.log(`Updating image [${ref}] to: ${newSrc}`);
     return `![${alt}](${newSrc})`;
   });
 };
@@ -144,6 +143,10 @@ const adjustImagePaths = (markdown, baseUrl) => {
 </template>
 
 <style scoped>
+img {
+  max-width: 100%;
+}
+
 h1 {
   color: var(--color-heading);
 }
@@ -229,9 +232,6 @@ main {
   height: 100%;
   padding: 1rem 2rem;
   overflow-y: scroll;
-}
-
-#project_dialog *, #project_dialog_wrapper * {
   max-width: 100%;
 }
 </style>

@@ -69,6 +69,7 @@
   margin: 0;
   position: relative;
   font-weight: normal;
+  max-width: 100%;
 }
 
 body {
