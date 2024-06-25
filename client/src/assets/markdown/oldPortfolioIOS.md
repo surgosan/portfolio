@@ -9,6 +9,8 @@ I do not expect someone to download the application
 and run it themselves, so I will just provide
 as short demonstration.
 
+___
+
 ![IOS Demonstration][1]
 
 [1]: OldPortfolioIOS2.gif
