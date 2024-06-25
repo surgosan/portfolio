@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import homePage from '../views/home.vue';
 import projectsVue from '@/views/projects.vue';
+import projectsView from '@/views/ProjectsView.vue';
 import missing from "@/views/missing.vue";
 import originalPortfolio from "@/views/originalPortfolio.vue";
 import aboutPage from '@/views/aboutPage.vue';
@@ -31,7 +32,7 @@ const routes = [
   {
     path: '/projects',
     name: 'projects',
-    component: projectsVue
+    component: projectsView
   },
   {
     path: '/original-portfolio',

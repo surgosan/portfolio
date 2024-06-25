@@ -24,13 +24,11 @@ const props = defineProps({
   }
 });
 
-function log() {
-  console.log("Hello World");
-}
+const emit = defineEmits(['openProject']);
 </script>
 
 <template>
-  <div class="projectCard">
+  <div class="projectCard" @click="emit('openProject')">
 <!--------------------------  HEADER  --------------------------->
     <div class="projectHeader">
       <h1>{{ title }}</h1>
@@ -43,10 +41,6 @@ function log() {
 
         <a v-if="link" class="projectLink" :href="link" target="_blank">
           <img src="@/assets/link.svg" alt="Link"/>
-        </a>
-
-        <a class="projectLink" @click="log">
-          <img src="@/assets/expand.svg" alt="Expand"/>
         </a>
       </div>
 

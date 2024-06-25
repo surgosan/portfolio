@@ -9,6 +9,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
+    "marked": "^13.0.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.1.0"

@@ -1,3 +1,115 @@
+<script setup>
+import projectCard from '@/components/projectCard.vue';
+import {ref} from "vue";
+import {marked} from "marked";
+import {useStore} from "vuex";
+
+const store = useStore();
+
+const projects = [
+  {
+    title: "Kennesaw State University AUV Team",
+    imageID: "KSUAUVWebsite",
+    tags: ["HTML", "CSS", "JavaScript"],
+    description: "The Kennesaw State University AUV Team website serves as the front face for potential investors. " +
+        "I worked on the website alone and created it from scratch while advising the team, and official RoboSub regulations.",
+    link: "https://ksuauv.com/",
+    markdown: "https://raw.githubusercontent.com/ksu-auv-team/ksuauv.github.io/main/README.md"
+  },
+  {
+    title: "Bespoked Bikes Management Site",
+    imageID: "beSpoked",
+    tags: ["HTML", "CSS", "JavaScript", "Vue.JS", "MySQL"],
+    description: "This full stack application allows for the creation, retrieval and updating of information on a database. " +
+        "It also displays data on a table for ease of use"
+  },
+  {
+    title: "Original Portfolio Mobile App",
+    imageID: "swift",
+    tags: ["Swift"],
+    description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift."
+  },
+  {
+    title: "Original Portfolio",
+    imageID: "oldPortfolio",
+    tags: ["HTML", "CSS", "JavaScript"],
+    description: "This is the original version of this portfolio. This is one of the projects I used to familiarize myself with " +
+        "web development.",
+  },
+  {
+    title: "Bunk-a-Biker Website Demo",
+    imageID: "bunk-a-biker",
+    tags: ["HTML", "CSS", "JavaScript", "Google APIs"],
+    description: "I created a modern version of the Bunk-A-Biker website that helped me learn how to utilize and implement apis. " +
+        "I experimented with different designs and maps in order to best display pins and locations."
+  },
+  {
+    title: "Application Hub",
+    imageID: "javaApplicationHub",
+    tags: ["Java", "JavaFX"],
+    description: "I created a simple desktop application for minor tasks. These include tasks that would require using a calculator, " +
+        "but I have the desktop application do it all for me.",
+  },
+  {
+    title: "Chess Master SWE Team Project",
+    imageID: "chessMaster",
+    tags: ["Java", "JavaFX"],
+    description: "For our Intro to Software Engineering class, our small team created a desktop application to manage a chess tournament. " +
+        "I handled about 90% of the backend for this project. This included the databases and handling of data.",
+    link: "https://github.com/konkgg/SoftwareEngProject"
+  }
+]
+
+//------------------------------------------------------ DIALOG CONTROLS ------------------------------------------------------
+const expandProject = ref(true);
+const projectContent = ref("");
+const closeDialog = () => {
+  expandProject.value = false;
+  projectContent.value = "";
+}
+const openDialog = async(markdownPath) => {
+  try {
+    const response = await fetch(markdownPath);
+    const markdown = await response.text();
+    const baseUrl = markdownPath.replace(/\/[^\/]*$/, '/'); // Get base URL
+    const adjustedMarkdown = adjustImagePaths(markdown, baseUrl);
+    projectContent.value = marked(adjustedMarkdown);
+    expandProject.value = true;
+  } catch(error) {
+    console.error('Error loading markdown file: ', error);
+    closeDialog();
+
+    // Create notification to notify user that site could not load project.
+    const notification = {
+      id: new Date().getTime(), // Unique identifier for the notification
+      message: "Could not retrieve project details.",
+    };
+    store.commit('addNotification', notification);
+    setTimeout(() => {
+      store.commit('removeOldestNotification');
+    }, 10000)
+  }
+}
+const adjustImagePaths = (markdown, baseUrl) => {
+  const imageReferenceRegex = /!\[([^\]]*)]\[([^\]]+)]/g; // Matches ![alt text][reference]
+  const imageDefinitionRegex = /\[([^\]]+)]:\s*([^()\s]+)/g; // Matches [reference]: path
+
+  // Replace image references with updated paths
+  return markdown.replace(imageReferenceRegex, (match, alt, ref) => {
+    const imageDefinitionMatch = markdown.match(imageDefinitionRegex);
+    if (!imageDefinitionMatch) {
+      console.warn(`Image reference [${ref}] found but no corresponding definition.`);
+      return match;
+    }
+
+    const [, imagePath] = imageDefinitionMatch.find(m => m.startsWith(`[${ref}]:`)).split(/\s+/);
+    const newSrc = new URL(imagePath, baseUrl).href;
+    console.log(`Updating image [${ref}] to: ${newSrc}`);
+    return `![${alt}](${newSrc})`;
+  });
+};
+</script>
+
 
 <template>
   <div class="main" id="projects_main">
@@ -8,6 +120,7 @@
 
       <h1>Projects</h1>
       <p>My projects come in various languages.</p>
+      <p>Click on a project to view more.</p>
     </div>
 
     <main>
@@ -20,67 +133,15 @@
           :imageID ="project.imageID"
           :tags="project.tags"
           :link="project.link"
-          :linkTarget="project.linkTarget"
+          @openProject = "openDialog(project.markdown)"
       />
     </main>
   </div>
+<!------------------------------------------------------- DIALOG ------------------------------------------------------->
+  <div id="project_dialog_wrapper" v-if="expandProject" @click.self="closeDialog">
+    <div v-html="projectContent" id="project_dialog"></div>
+  </div>
 </template>
-
-<script setup>
-  import projectCard from '@/components/projectCard.vue';
-  const projects = [
-    {
-      title: "Kennesaw State University AUV Team",
-      imageID: "KSUAUVWebsite",
-      tags: ["HTML", "CSS", "JavaScript"],
-      description: "The Kennesaw State University AUV Team website serves as the front face for potential investors. " +
-          "I worked on the website alone and created it from scratch while advising the team, and official RoboSub regulations.",
-      link: "https://ksuauv.com/",
-    },
-    {
-      title: "Bespoked Bikes Management Site",
-      imageID: "beSpoked",
-      tags: ["HTML", "CSS", "JavaScript", "Vue.JS", "MySQL"],
-      description: "This full stack application allows for the creation, retrieval and updating of information on a database. " +
-          "It also displays data on a table for ease of use"
-    },
-    {
-      title: "Original Portfolio Mobile App",
-      imageID: "swift",
-      tags: ["Swift"],
-      description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift."
-    },
-    {
-      title: "Original Portfolio",
-      imageID: "oldPortfolio",
-      tags: ["HTML", "CSS", "JavaScript"],
-      description: "This is the original version of this portfolio. This is one of the projects I used to familiarize myself with " +
-          "web development.",
-    },
-    {
-      title: "Bunk-a-Biker Website Demo",
-      imageID: "bunk-a-biker",
-      tags: ["HTML", "CSS", "JavaScript", "Google APIs"],
-      description: "I created a modern version of the Bunk-A-Biker website that helped me learn how to utilize and implement apis. " +
-          "I experimented with different designs and maps in order to best display pins and locations."
-    },
-    {
-      title: "Chess Master SWE Team Project",
-      imageID: "chessMaster",
-      tags: ["Java", "JavaFX"],
-      description: "For our Intro to Software Engineering class, our small team created a desktop application to manage a chess tournament. " +
-          "I handled about 90% of the backend for this project. This included the databases and handling of data.",
-      link: "https://github.com/konkgg/SoftwareEngProject"
-    },
-    {
-      title: "Application Hub",
-      imageID: "javaApplicationHub",
-      tags: ["Java", "JavaFX"],
-      description: "I created a simple desktop application for minor tasks. These include tasks that would require using a calculator, " +
-          "but I have the desktop application do it all for me.",
-    }
-  ]
-</script>
 
 <style scoped>
 h1 {
@@ -102,13 +163,8 @@ a.link {
 }
 
 a.link:hover {
-  border: solid 1.5px var(--color-theme);
+  border: solid 1px var(--color-theme);
   background-color: var(--color-background-soft);
-}
-
-.important {
-  color: var(--color-theme);
-  animation-delay: 2s;
 }
 
 .main {
@@ -130,7 +186,7 @@ main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem;
+  margin: 3rem 0;
   gap: 1rem;
 }
 
@@ -152,27 +208,30 @@ main {
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.75);
 }
 
-/* ----------------------------------------------- DETAILS -----------------------------------------------*/
-.chips {
-  width: 100%;
-  padding: 2%;
+/* -------------------------------------------- Project Dialog --------------------------------------------*/
+#project_dialog_wrapper {
+  background: var(--vt-c-text-light-2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 1;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
 }
 
-.langChip {
-  color: var(--color-heading);
-  text-decoration: none;
-  text-align: center;
-  background: var(--color-background-soft);
-  border: solid 2px var(--color-border);
-  border-radius: 13px;
-  padding-left: 2%;
-  padding-right: 2%;
+#project_dialog {
+  background: var(--color-background);
+  width: 60%;
+  height: 100%;
+  padding: 1rem 2rem;
+  overflow-y: scroll;
 }
 
-.langChip:hover {
-  background: var(--color-border-hover);
+#project_dialog *, #project_dialog_wrapper * {
+  max-width: 100%;
 }
 </style>
