@@ -167,4 +167,7 @@ h1, p, a, div {
 #beSpoked {
   background: url(../assets/Photos/beSpokedHome.png);
 }
+#esp32S3JoystickMotor {
+  background: url(../assets/markdown/ESP32S3_Joystick_Motors/portfolio_snapshot.jpg);
+}
 </style>

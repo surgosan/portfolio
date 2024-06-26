@@ -8,6 +8,14 @@ const store = useStore();
 
 const projects = [
   {
+    title: "ESP32-S3 DC Motors and Joystick",
+    imageID: "esp32S3JoystickMotor",
+    tags: ["Micro-Controllers", "ESP32", "Arduino IDE"],
+    description: "I explore the basics of controlling motors via a joystick and potentiometer. " +
+        "This project helped me better understand circuits, I2C connections, and micro-controllers.",
+    markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/main/ESP32-S3-WROOM-2/Projects/DC_Motors_Rotary_and_Joystick/README.md"
+  },
+  {
     title: "Kennesaw State University AUV Team",
     imageID: "KSUAUVWebsite",
     tags: ["HTML", "CSS", "JavaScript"],
