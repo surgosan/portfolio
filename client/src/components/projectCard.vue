@@ -170,4 +170,7 @@ h1, p, a, div {
 #esp32S3JoystickMotor {
   background: url(../assets/markdown/ESP32S3_Joystick_Motors/portfolio_snapshot.jpg);
 }
+#esp32S3ForceBased {
+  background: url(../assets/markdown/ESP32S3ForceBased/force_based_snapshot.jpg);
+}
 </style>

@@ -8,9 +8,18 @@ const store = useStore();
 
 const projects = [
   {
+    title: "ESP32-S3 Force Based Applications",
+    imageID: "esp32S3ForceBased",
+    tags: ["Micro-Controllers", "ESP32", "Circuits"],
+    description: "From a drink coaster than lights up when you place a drink on it, to " +
+      "a chair that turns on a computer; There are endless possibilities to what you could do with a micro-controller " +
+      "and a force resistor.",
+    markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/main/ESP32-S3-WROOM-2/Projects/Force_Based_Applications/README.md"
+  },
+  {
     title: "ESP32-S3 DC Motors and Joystick",
     imageID: "esp32S3JoystickMotor",
-    tags: ["Micro-Controllers", "ESP32", "Arduino IDE"],
+    tags: ["Micro-Controllers", "ESP32", "Circuits"],
     description: "I explore the basics of controlling motors via a joystick and potentiometer. " +
         "This project helped me better understand circuits, I2C connections, and micro-controllers.",
     markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/main/ESP32-S3-WROOM-2/Projects/DC_Motors_Rotary_and_Joystick/README.md"
