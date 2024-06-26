@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import homePage from '../views/home.vue';
-import projectsVue from '@/views/projects.vue';
+import projectsVue from '@/views/projects-old.vue';
 import projectsView from '@/views/ProjectsView.vue';
 import missing from "@/views/missing.vue";
 import originalPortfolio from "@/views/originalPortfolio.vue";
