@@ -173,4 +173,7 @@ h1, p, a, div {
 #esp32S3ForceBased {
   background: url(../assets/markdown/ESP32S3ForceBased/force_based_snapshot.jpg);
 }
+#esp32AWP {
+  background: url(../assets/markdown/ESP32_Automated_Water_Pump/AWP_snapshot.jpg);
+}
 </style>
