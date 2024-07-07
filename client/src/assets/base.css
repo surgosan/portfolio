@@ -155,3 +155,7 @@ td:hover {
 svg path {
   fill: var(--color-theme);
 }
+
+img {
+  border-radius: 1rem;
+}

@@ -11,8 +11,17 @@ const projects = [
     title: "ESP32 Automated Water Pump",
     imageID: "esp32AWP",
     tags: ["C", "Micro-Controllers", "ESP32", "Circuits"],
-    description: "ESP32 Automated Water Pump",
+    description: "In order to automate my cats water fountain, I used an ESP32 to have control over its state. I also configured it to turn on" +
+      " and off based on what time it is.",
     markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/main/ESP32-WROOM-32/Projects/Automated_Water_Pump/README.md"
+  },
+  {
+    title: "Portfolio for IOS",
+    imageID: "portfolio_ios",
+    tags: ["Swift", "XCode"],
+    description: "Using an iMac Mini and an iPhone 13 Pro, I was able to successfully recreate my portfolio as an IOS application. " +
+        "It serves static content and fetches data from my database.",
+    markdown: "https://raw.githubusercontent.com/surgosan/Portfolio_IOS/main/README.md"
   },
   {
     title: "ESP32-S3 Force Based Applications",
@@ -49,9 +58,9 @@ const projects = [
     markdown: "https://raw.githubusercontent.com/surgosan/BeSpoked-Bikes-Commision-Tracker/main/README.md"
   },
   {
-    title: "Original Portfolio Mobile App",
+    title: "Original Portfolio for IOS",
     imageID: "swift",
-    tags: ["Swift"],
+    tags: ["Swift", "XCode"],
     description: "In order to learn mobile development for IOS, I recreated my portfolio as an IOS app using Swift and XCode.",
     markdown: "https://raw.githubusercontent.com/surgosan/portfolio/main/client/src/assets/markdown/oldPortfolio/oldPortfolioIOS.md"
   },
