@@ -10,10 +10,8 @@ I am always looking for ways to update and enhance it.
 
 ## Current Future Plans
 
-- Fix issue where site breaks if refreshed a page that is not home page
 - Bring about content closer? Change layout to boxed areas?
 - Playground area to play with data in a database using logic
-- Adjust backend to route all urls to index.html
 - Create personal blog where I can update my activities
 
 ## Completed Plans
@@ -27,6 +25,8 @@ I am always looking for ways to update and enhance it.
   - Allow user to expand the item
   - Remove any need to visit external links or download items
 - Create more Swift previews to display as a video in Projects
+- Fix issue where site breaks if refreshed a page that is not home page
+- Adjust backend to route all urls to index.html
 
 
 [1]: client/src/assets/Photos/portfolio_home.png
