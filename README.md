@@ -13,6 +13,7 @@ I am always looking for ways to update and enhance it.
 - Bring about content closer? Change layout to boxed areas?
 - Playground area to play with data in a database using logic
 - Create personal blog where I can update my activities
+- Fix mobile view of about view tools
 
 ## Completed Plans
 - Optimise for smaller screens
