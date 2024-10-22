@@ -8,6 +8,14 @@ const store = useStore();
 
 const projects = [
   {
+    title: "Step Down Voltage Regulator",
+    imageID: "buck_converter",
+    tags: ["Circuits", "Altium Designer", "PCB Design"],
+    description: "To help facilitate future projects, I created a step down voltage regulator to control the DC inputs to modules" +
+        " that do not need as much power such as a MCU.",
+    markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/refs/heads/main/Assistive-Projects/Step%20Down%20Voltage%20Regulator/README.md"
+  },
+  {
     title: "ESP32 Automated Water Pump",
     imageID: "esp32AWP",
     tags: ["C", "Micro-Controllers", "ESP32", "Circuits"],

@@ -179,4 +179,7 @@ h1, p, a, div {
 #portfolio_ios {
   background: url(../assets/markdown/Portfolio_IOS/Porfolio_IOS.png);
 }
+#buck_converter {
+  background: url(../assets/markdown/buck_converter/buck_front.png);
+}
 </style>
