@@ -182,4 +182,7 @@ h1, p, a, div {
 #buck_converter {
   background: url(../assets/markdown/buck_converter/buck_front.png);
 }
+#autoPump_v2 {
+  background: url(../assets/markdown/ESP32_AutoPump_2/snapshot.jpg);
+}
 </style>

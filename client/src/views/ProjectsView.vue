@@ -8,6 +8,14 @@ const store = useStore();
 
 const projects = [
   {
+    title: "ESP32 Automated Water Pump V2",
+    imageID: "autoPump_v2",
+    tags: ["C", "Micro-Controllers", "ESP32", "Circuits"],
+    description: "The second iteration of my water pump project where I integrated my buck " +
+        "converter project into custom pcb.",
+    markdown: "https://raw.githubusercontent.com/surgosan/ESP32_Projects/refs/heads/main/ESP32-WROOM-32/Projects/Automated_Water_Pump_V2/README.md"
+  },
+  {
     title: "Step Down Voltage Regulator",
     imageID: "buck_converter",
     tags: ["Circuits", "Altium Designer", "PCB Design"],
