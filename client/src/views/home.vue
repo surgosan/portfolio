@@ -51,7 +51,7 @@
 
     <main id="home_main">
 
-      <card id="cardOne" title="Download my Resume" file="Sergio Sanchez Alvares.pdf" download/>
+      <card id="cardOne" title="Download my Resume" file="Sergio Sanchez-Alvares.pdf" download/>
 
       <card id="cardTwo" title= "Check out my Unsplash photos" file="https://unsplash.com/@surgosan"/>
 
@@ -71,7 +71,7 @@
           <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
         </a>
       </div>
-      <p>Last Updated: 2024/11/06</p>
+      <p>Last Updated: 2024/11/14</p>
     </main>
   </div>
 

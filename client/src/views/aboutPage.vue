@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="view">
-                    <h3 id="topicText">{{ topicText }}</h3>
+                    <h3 id="topicText" v-html="topicText"></h3>
                     <span class="imageSpan" id="imageOne"></span>
                     <span class="imageSpan2" id="imageTwo"></span>
 
@@ -394,12 +394,12 @@
 
     const topicText = ref('Select a topic to read about.');
     
-    const general = "My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend Kennesaw State University. I enjoy programming, music, photography, and motorcycles.";
-    const hobbies = "I am a musician and perform on the weekends. I ride a an adventure motorcycle, so I like to take trips and off-roading. I also like photography and go out to take photos sometimes. I also really enjoy programming. I never get tired and sometimes just program for fun.";
-    const plans = "My future plans consist of graduating from Kennesaw State University with a Bachelor of Science in Computer Science, deepening my knowledge in programming and music, and also to travel to Japan.";
-    const workEthic = "I am well organized and like to work hard and smart. I enjoy problem solving and am independent, but I am always willing to work with others as well.";
-    const programmingTools = "I use a few different tools and languages. As for languages, I am confident in HTML, CSS, JavaScript, Java, and Markdown. I also know Swift. However, I am still learning Swift. As for tools, I am familiar with Vue.js for website development and JavaFX for Java front-end. I also use Github, BitBucket, VSCode and Jgrasp. I also use SQL and MySQL. I am familiar with all of these too.";
-    const programmingExperience = "I have a few different projects that I have worked on alone and with others to further my skill set. I have recreated an existing website and I created this portfolio but this is actually the second version. I am the sole web developer of the KSU AUV team and created the website from scratch. I have learned how to work on both front end and back end development with UX/UI, servers, and databases.";
+    const general = "My name is Sergio Sanchez-Alvares. I live in Georgia, USA where I attend <i>Kennesaw State University</i>. I enjoy programming, music, photography, and motorcycles. I am part of the <u>Kennesaw State University Autonomous Underwater Vehicle (AUV) team</u>. I have completed my internship at the <u>Peaches & Cream Foundation as a full-stack development intern</u>. I am also currently conducting <i>independent research</i> implementing a wireless control area network (CAN) for video transmission.";
+    const hobbies = "I am a musician and perform on the weekends. I ride an adventure motorcycle, so I like to take trips and off-road. I also like photography and go out to take photos sometimes. I also enjoy tinkering with electronics and code to try to make it do what I want.";
+    const plans = "My future plans consist of graduating from Kennesaw State University with a Bachelor of Science in Computer Science, deepening my knowledge in programming and music, and also to travel to Japan. Career-wise, I would like to join a research group like GTRI, Anduril, or Lockheed Martin. I am sure to fit into these settings.";
+    const workEthic = "I am well organized and like to work hard and smart. I enjoy problem solving and am independent, but I am always willing to work with others as well. I may not be the most extroverted, but I believe I have enough charisma to lead a team efficiently.";
+    const programmingTools = "Languages: C, Java, JavaScript, HTML, CSS, Markdown, Swift, & SQL <br> Tools: VueJS, MySQL, AWS, Git, Soldering, Electronic Tools (Multimeter, Oscilloscope, etc.), CMake <br> Applications: Webstorm, IntelliJ Idea, CLion, VS Code, Postman, ESP-IDF, Jetbrains Fleet, XCode, ArduinoIDE, Altium Designer, KiCad";
+    const programmingExperience = "I have gained plenty of experience from the <u>KSU AUV team</u>, my <u>internship at the Peaches & Cream Foundation</u>, and <u>personal projects</u>. I have gained skills in electronics, apis, full-stack development, and embedded development. I strive to further develop my skills and broaden my knowledge over these various topics.";
 
     function imageChange(imageIndex)
     {
