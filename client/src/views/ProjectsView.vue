@@ -8,6 +8,14 @@ const store = useStore();
 
 const projects = [
   {
+    title: "Peaches & Cream Foundation Internship",
+    imageID: "pncf",
+    tags: ["Internship", "Full Stack Development", "VueJS", "MySQL"],
+    description: "I can proudly say I interned at the Peaches & Cream Foundation as a full " +
+        "stack web developer intern. I developed 2 web apps in VueJS, NodeJS, & MySQL.",
+    link: ["https://supportyourmental.com/#/"]
+  },
+  {
     title: "ESP32 Automated Water Pump V2",
     imageID: "autoPump_v2",
     tags: ["C", "Micro-Controllers", "ESP32", "Circuits"],
