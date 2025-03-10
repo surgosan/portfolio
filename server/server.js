@@ -1,6 +1,5 @@
 const { portfolioDB, ksuAUVDB } = require('./dbInstance');
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
@@ -9,8 +8,6 @@ app.use(cors())
 require('./routes')(app);
 const port = 8081;
 
-app.use(express.static(path.join(__dirname, 'dist')));
-
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -18,8 +15,8 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get('api/text', (req, res) => {
+    res.json({message: 'Test Good!'});
 })
 
 async function startServer() {
