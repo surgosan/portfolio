@@ -6,5 +6,7 @@ module.exports = {
         args[0].title = 'Sergio: Portfolio'
         return args
       })
-    }
+    },
+
+    publicPath: "/"
   }
