@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.get('api/text', (req, res) => {
+app.get('/api/text', (req, res) => {
     res.json({message: 'Test Good!'});
 })
 
