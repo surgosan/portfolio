@@ -6,6 +6,8 @@ const visitorController = require('./controllers/visitorCountController');
 const {batteryController, motorController, servoController, logController, powerController} = require("./ksu_auv_control/ksu_auv_controllers");
 
 module.exports = (app) => {
+	app.get('/test', (req, res) => {res.json({message: 'Test Good!'});})
+
 	app.post('/message/new', messageController.newMessage);
 	app.post('/message/getByName', messageController.getByName);
 	app.get('/message/getAll', messageController.getAllMessages);

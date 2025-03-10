@@ -15,10 +15,6 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.get('/api/text', (req, res) => {
-    res.json({message: 'Test Good!'});
-})
-
 async function startServer() {
     try {
         await Promise.all([
