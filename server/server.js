@@ -9,7 +9,7 @@ app.use(cors())
 require('./routes')(app);
 const port = 8081;
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 })
 
 async function startServer() {
