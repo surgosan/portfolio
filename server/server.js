@@ -19,7 +19,6 @@ async function startServer() {
     try {
         await Promise.all([
             // portfolioDB.authenticate(),
-            // ksuAUVDB.authenticate()
             piDB.authenticate()
         ]);
 

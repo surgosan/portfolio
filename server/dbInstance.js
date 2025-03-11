@@ -26,16 +26,6 @@ const portfolioDB = new Sequelize('portfolio', username, password, {
     }
 });
 
-const ksuAUVDB = new Sequelize('ksu_auv_control', username, password, {
-    host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
-    dialect:'mysql',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false,
-        }
-    }
-})
-
 async function initPiDB()
 {
     try {
@@ -56,20 +46,10 @@ async function initPortfolio()
     }
 }
 
-async function initAUV() {
-    try {
-        await ksuAUVDB.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-}
-
 async function init() {
     await Promise.all([
         initPiDB(),
         // initPortfolio()
-        // initAUV()
     ]);
 }
 
@@ -79,6 +59,5 @@ init().then(() => {
 
 module.exports = {
     // portfolioDB,
-    // ksuAUVDB,
     piDB
 };
