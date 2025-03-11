@@ -3,6 +3,18 @@ const Sequelize = require('sequelize');
 
 const username = process.env.USERNAME;
 const password = process.env.PASSWORD;
+const local_u = process.env.LOCAL_USERNAME
+const local_p = process.env.LOCAL_PASSWORD
+
+const piDB = new Sequelize('portfolio', local_u, local_p, {
+    host: 'localhost',
+    dialect:'mysql',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false,
+        }
+    }
+});
 
 const portfolioDB = new Sequelize('portfolio', username, password, {
     host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
@@ -24,6 +36,16 @@ const ksuAUVDB = new Sequelize('ksu_auv_control', username, password, {
     }
 })
 
+async function initPiDB()
+{
+    try {
+        await piDB.authenticate();
+        console.log('PI DB has connected.');
+    } catch (error) {
+        console.error('Unable to connect to PI DB:', error);
+    }
+}
+
 async function initPortfolio()
 {
     try {
@@ -44,7 +66,11 @@ async function initAUV() {
 }
 
 async function init() {
-    await Promise.all([initPortfolio(), initAUV()]);
+    await Promise.all([
+        initPiDB(),
+        // initPortfolio()
+        // initAUV()
+    ]);
 }
 
 init().then(() => {
