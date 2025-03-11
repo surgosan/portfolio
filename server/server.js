@@ -1,4 +1,4 @@
-const { portfolioDB, ksuAUVDB } = require('./dbInstance');
+const { piDB } = require('./dbInstance');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -18,8 +18,9 @@ app.use(function(req, res, next) {
 async function startServer() {
     try {
         await Promise.all([
-            portfolioDB.authenticate(),
-            ksuAUVDB.authenticate()
+            // portfolioDB.authenticate(),
+            // ksuAUVDB.authenticate()
+            piDB.authenticate()
         ]);
 
         app.listen(port, () => {
