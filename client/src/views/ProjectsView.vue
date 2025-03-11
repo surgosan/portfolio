@@ -8,6 +8,14 @@ const store = useStore();
 
 const projects = [
   {
+    title: "Raspberry Pi 5 Web Server",
+    imageID: "pi_5_web_server",
+    tags: ["Linux Ubuntu Server", "Cloudflare", "nginx", "pm2"],
+    description: "My AWS free trial was about to end, and thus, I would have to start paying." +
+        " I don't want to pay, so I made my own web app host at home. It hosts the front-end, back-end, and " +
+        "database for the portfolio your looking at right now."
+  },
+  {
     title: "Peaches & Cream Foundation Internship",
     imageID: "pncf",
     tags: ["Internship", "Full Stack Development", "VueJS", "MySQL"],

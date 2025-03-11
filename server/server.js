@@ -18,7 +18,6 @@ app.use(function(req, res, next) {
 async function startServer() {
     try {
         await Promise.all([
-            // portfolioDB.authenticate(),
             piDB.authenticate()
         ]);
 

@@ -188,4 +188,7 @@ h1, p, a, div {
 #pncf {
   background: url(../assets/Photos/pncf_board.png);
 }
+#pi_5_web_server {
+  background: url(../assets/markdown/raspberry_pi_5_web_server/pi_server_reduced.webp);
+}
 </style>
