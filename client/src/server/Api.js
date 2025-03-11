@@ -2,6 +2,6 @@ import axios from "axios";
 
 export default () => {
     return axios.create({
-        baseURL: "https://sanchezalvarez.dev/api"
+        baseURL: "https://api.sanchezalvarez.dev"
     })
 }

@@ -1,10 +1,11 @@
+require('dotenv').config();
 const Sequelize = require('sequelize');
 
-const username = process.env.USERNAME;
-const password = process.env.PASSWORD;
+const local_u = process.env.LOCAL_USERNAME
+const local_p = process.env.LOCAL_PASSWORD
 
-const portfolioDB = new Sequelize('portfolio', username, password, {
-    host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
+const piDB = new Sequelize('portfolio', local_u, local_p, {
+    host: 'localhost',
     dialect:'mysql',
     dialectOptions: {
         ssl: {
@@ -13,37 +14,20 @@ const portfolioDB = new Sequelize('portfolio', username, password, {
     }
 });
 
-const ksuAUVDB = new Sequelize('ksu_auv_control', username, password, {
-    host: 'surgo-amazon-db.cjms264s0hpn.us-east-2.rds.amazonaws.com',
-    dialect:'mysql',
-    dialectOptions: {
-        ssl: {
-            rejectUnauthorized: false,
-        }
-    }
-})
-
-async function initPortfolio()
+async function initPiDB()
 {
     try {
-        await portfolioDB.authenticate();
-        console.log('Connection has been established successfully.');        
+        await piDB.authenticate();
+        console.log('PI DB has connected.');
     } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-}
-
-async function initAUV() {
-    try {
-        await ksuAUVDB.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
+        console.error('Unable to connect to PI DB:', error);
     }
 }
 
 async function init() {
-    await Promise.all([initPortfolio(), initAUV()]);
+    await Promise.all([
+        initPiDB(),
+    ]);
 }
 
 init().then(() => {
@@ -51,6 +35,5 @@ init().then(() => {
 });
 
 module.exports = {
-    portfolioDB,
-    ksuAUVDB
+    piDB
 };

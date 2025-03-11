@@ -35,7 +35,7 @@
       <h2><hoverColoredText innerText="Student"/> | <hoverColoredText innerText="Musician"/> | <hoverColoredText innerText="Programmer"/></h2>
       <prgLang class="important animate__animated animate__rubberBand animate__delay-2s"/>
       <hr>
-      <h2><hoverColoredText innerText='Full Stack Developer'/></h2>
+      <h2><hoverColoredText innerText='Firmware Engineer | Full Stack Developer'/></h2>
 
       <div class="linkContainer">
         <RouterLink class="link" to="/about">About</RouterLink>
@@ -71,7 +71,7 @@
           <img src="@/assets/linkedin_svg.svg" alt="LinkedIn">
         </a>
       </div>
-      <p>Last Updated: 2024/11/14</p>
+      <p>Last Updated: 2025/03/11</p>
     </main>
   </div>
 

@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const { portfolioDB } = require('../dbInstance');
+const { piDB } = require('../dbInstance');
 
-const Message = portfolioDB.define('Message',
+const Message = piDB.define('Message',
     {
         id: {
             type: DataTypes.INTEGER,
